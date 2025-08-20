@@ -47,10 +47,12 @@ public class FreeListingPage extends BasePage {
 	    {
 			mobile.sendKeys(number);
 	    }
+
 	    public void startNow()
 	    {
 			start.click();
 	    }
+
 	    public String errorDisplay() {
 	    	return errorMsg.getText();
 	    }

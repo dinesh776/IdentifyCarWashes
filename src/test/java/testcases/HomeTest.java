@@ -10,10 +10,11 @@ import pages.FreeListingPage;
 
 public class HomeTest extends BaseTest {
 
-    @Test(priority = 0)
+    @Test()
     public void testHome(){
         HomePage homePage=new HomePage(driver);
         homePage.handlePopup();
+        homePage.handleLocation("Old Gajuwaka,Visakhapatnam");
         homePage.setSearchField("Car Wash Services");
         homePage.clickOnSearch();
         driver.switchTo().defaultContent();
@@ -37,7 +38,7 @@ public class HomeTest extends BaseTest {
         flp.mobileNumber("987654321");
         flp.startNow();
         System.out.println(flp.errorDisplay());
-        flp.handlingPopUp();
+//        flp.handlingPopUp();
     }
 
 }

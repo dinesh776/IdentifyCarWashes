@@ -60,4 +60,9 @@ public class BaseTest {
         driver.get("https://www.justdial.com/");
     }
 
+    @AfterClass
+    public void tear_down(){
+        driver.quit();
+    }
+
 }
