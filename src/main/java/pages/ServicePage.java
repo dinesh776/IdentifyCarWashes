@@ -75,17 +75,28 @@ public class ServicePage extends BasePage {
     }
 
     public void setQuickFilter(String quickFilter){
-        switch (quickFilter.toLowerCase()){
-            case "top rated":topRated.click();break;
-            case "quick response":quickResponse.click();break;
-            case "jd verified":jdVerified.click();break;
-            case "jd trust":jdTrust.click();break;
-            default:
-                System.out.println("Invalid Quick Filter");break;
+        if(quickFilter.equalsIgnoreCase("none")){
+            return;
         }
+        try{
+            switch (quickFilter.toLowerCase()){
+                case "top rated":topRated.click();break;
+                case "quick response":quickResponse.click();break;
+                case "jd verified":jdVerified.click();break;
+                case "jd trust":jdTrust.click();break;
+                default:
+                    System.out.println("Invalid Quick Filter");break;
+            }
+        }catch (Exception e){
+            System.out.println(quickFilter + " is not available in filters...");
+        }
+
     }
 
     public void sortBy(String sortValue){
+        if(sortValue.equalsIgnoreCase("none")){
+            return;
+        }
         try{
             switch (sortValue.toLowerCase()){
                 case "relevance":
@@ -106,12 +117,15 @@ public class ServicePage extends BasePage {
                 default: System.out.println("Invalid sort type");break;
             }
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println(sortValue+" sort type is not available in filters..");
         }
 
     }
 
     public void setServiceType(String type){
+        if(type.equalsIgnoreCase("none")){
+            return;
+        }
         try {
             switch (type.toLowerCase()){
                 case "authorised":
@@ -128,12 +142,15 @@ public class ServicePage extends BasePage {
                     System.out.println("Invalid service type");break;
             }
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println(type+" service type is not available in filters...");
         }
 
     }
 
     public void setRating(String rating){
+        if(rating.equalsIgnoreCase("none")){
+            return;
+        }
         try {
             jsExecutor.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight;",filtersMenu);
             switch (rating.toLowerCase()){
@@ -161,7 +178,7 @@ public class ServicePage extends BasePage {
                     System.out.println("Invalid rating");break;
             }
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println(rating+" rating is not available in filters ...");
         }
     }
 
