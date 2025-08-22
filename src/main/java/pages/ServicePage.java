@@ -25,12 +25,6 @@ public class ServicePage extends BasePage {
     @FindBy(xpath = "//span[text()='Popular']")
     WebElement popular;
 
-//    Service types
-    @FindBy(xpath = "//span[text()='Authorised']")
-    WebElement auth;
-
-    @FindBy(xpath = "//span[text()='Door Step']")
-    WebElement door;
 
 //    rating
     @FindBy(xpath = "//span[text()='Any']")
@@ -118,31 +112,6 @@ public class ServicePage extends BasePage {
             }
         }catch (Exception e){
             System.out.println(sortValue+" sort type is not available in filters..");
-        }
-
-    }
-
-    public void setServiceType(String type){
-        if(type.equalsIgnoreCase("none")){
-            return;
-        }
-        try {
-            switch (type.toLowerCase()){
-                case "authorised":
-                    if(auth.isDisplayed()){
-                        auth.click();
-                    }
-                    break;
-                case "door step":
-                    if(door.isDisplayed()){
-                        door.click();
-                    }
-                    break;
-                default:
-                    System.out.println("Invalid service type");break;
-            }
-        }catch (Exception e){
-            System.out.println(type+" service type is not available in filters...");
         }
 
     }

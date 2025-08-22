@@ -6,6 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomePage extends BasePage {
 
     @FindBy(xpath = "//a[text()='Maybe Later']")
@@ -23,19 +27,51 @@ public class HomePage extends BasePage {
     @FindBy(id = "react-autowhatever-city-auto-suggest--item-1")
     WebElement customLocation;
 
+    @FindBy(id="popular_categories")
+    WebElement popularCategories;
+
+    @FindBy(xpath = "//div[contains(@class,'sidemenu_text')]")
+    List<WebElement> categories;
+
+    @FindBy(id = "pop_close")
+    WebElement popClose;
+
+    @FindBy(xpath = "//span[@aria-label='Close Banner']")
+    WebElement closeBanner;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public void handlePopup(){
+    public void handlePopups(){
         popUp.click();
+        closeBanner.click();
     }
+
+    public void clickOnCategories(){
+        popularCategories.click();
+    }
+
+    public List<String> gatherCategories(){
+        List<String> categoriesList=new ArrayList<>();
+        for(WebElement e:categories){
+            String category=e.getText();
+            categoriesList.add(category);
+        }
+        return categoriesList;
+    }
+
+
+    public void closeCategories(){
+        popClose.click();
+    }
+
 
     public void handleLocation(String locationVal){
         if(!locationVal.equalsIgnoreCase("near me")){
-            location.click();
-            location.sendKeys(locationVal);
-            wait.until(ExpectedConditions.visibilityOf(customLocation)).click();
+            wait.until(ExpectedConditions.visibilityOf(location)).click();
+            wait.until(ExpectedConditions.visibilityOf(location)).sendKeys(locationVal);
+            wait.until(ExpectedConditions.elementToBeClickable(customLocation)).click();
         }
     }
 
