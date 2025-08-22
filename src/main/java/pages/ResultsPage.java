@@ -56,7 +56,7 @@ public class ResultsPage extends BasePage {
     WebElement close;
 
     public String getFirstRating(){
-        return firstRating.getText();
+        return wait.until(ExpectedConditions.visibilityOf(firstRating)).getText();
     }
 
     public void clickOnShow(){

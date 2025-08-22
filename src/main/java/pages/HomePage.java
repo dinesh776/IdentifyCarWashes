@@ -1,6 +1,7 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class HomePage extends BasePage {
 
@@ -38,6 +40,9 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//span[@aria-label='Close Banner']")
     WebElement closeBanner;
+
+    @FindBy(xpath = "//button[contains(@class,'all_filter_container')]")
+    WebElement filters;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -83,8 +88,17 @@ public class HomePage extends BasePage {
         searchField.sendKeys(service);
     }
 
+    public void clickOnSearchWithWait(){
+        searchButton.click();
+        wait.until(ExpectedConditions.visibilityOf(filters));
+    }
+
     public void clickOnSearch(){
         searchButton.click();
     }
+
+
+
+
 
 }

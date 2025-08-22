@@ -25,7 +25,7 @@ public class HomeTest extends BaseTest {
 
         homePage.handleLocation("Old Gajuwaka,Visakhapatnam");
         homePage.setSearchField("Car Wash Services");
-        homePage.clickOnSearch();
+        homePage.clickOnSearchWithWait();
     }
   
     @Test(priority = 1)
