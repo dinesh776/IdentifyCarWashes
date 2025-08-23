@@ -5,9 +5,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Reporter;
 import org.testng.annotations.Optional;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -29,11 +34,13 @@ public class BaseTest {
         return driver;
     }
 
-    @BeforeClass
-    @Parameters({"browser","platform"})
-    public void setUp(@Optional("chrome") String browser,@Optional("windows") String platform) throws MalformedURLException {
+    @Before
+    public static void setUp() throws MalformedURLException {
 
         String Execution= ConfigReader.getEnvironment();
+
+        String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browser");
+        String platform = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("platform");
 
         ChromiumOptions<?> options;
 
@@ -104,8 +111,8 @@ public class BaseTest {
         driver.get(ConfigReader.getAppUrl());
     }
 
-    @AfterClass
-    public void tear_down(){
+    @After
+    public static void tear_down(){
         driver.quit();
     }
 

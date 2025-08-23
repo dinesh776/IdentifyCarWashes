@@ -16,21 +16,12 @@ import java.util.List;
 
 public class HomeTest extends BaseTest {
 
-    @DataProvider(name = "dp")
-    public Object[][] getData(){
-        List<HashMap<String,String>> data= ExcelUtility.getTestData();
-
-        Object[][] da=new Object[10][6];
-
-        for(int i=0;i<10;i++){
-            da[i][0]=data.get(i).get("S.No");
-            da[i][1]=data.get(i).get("Location");
-            da[i][2]=data.get(i).get("Service Name");
-            da[i][3]=data.get(i).get("Quick Filters");
-            da[i][4]=data.get(i).get("Sort By");
-            da[i][5]=data.get(i).get("Ratings");
-        }
-        return da;
+  @Test(priority=0)
+    public void homeTest(){
+       
+        homePage.handleLocation("Old Gajuwaka,Visakhapatnam");
+        homePage.setSearchField("Car Wash Services");
+        homePage.clickOnSearchWithWait();
     }
 
 

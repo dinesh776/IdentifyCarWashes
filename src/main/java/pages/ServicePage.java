@@ -121,27 +121,26 @@ public class ServicePage extends BasePage {
             return;
         }
         try {
-            jsExecutor.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight;",filtersMenu);
             switch (rating.toLowerCase()){
                 case "any":
                     if(rating1.isDisplayed()){
-                        rating1.click();
+                        jsExecutor.executeScript("arguments[0].click();",rating1);
                     }break;
                 case "3.5+":
                     if(rating2.isDisplayed()){
-                        rating2.click();
+                        jsExecutor.executeScript("arguments[0].click();",rating2);
                     }break;
                 case "4.0+":
                     if(rating3.isDisplayed()){
-                        rating3.click();
+                        jsExecutor.executeScript("arguments[0].click();",rating3);
                     }break;
                 case "4.5+":
                     if(rating4.isDisplayed()){
-                        rating4.click();
+                        jsExecutor.executeScript("arguments[0].click();",rating4);
                     }break;
                 case "5.0":
                     if(rating5.isDisplayed()){
-                        rating5.click();
+                        jsExecutor.executeScript("arguments[0].click();",rating5);
                     }break;
                 default:
                     System.out.println("Invalid rating");break;
