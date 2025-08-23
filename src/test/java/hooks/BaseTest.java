@@ -35,12 +35,16 @@ public class BaseTest {
     }
 
     @Before
+    @BeforeClass
     public static void setUp() throws MalformedURLException {
 
         String Execution= ConfigReader.getEnvironment();
 
         String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browser");
         String platform = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("platform");
+
+        browser=browser==null?"chrome":browser;
+        platform=platform==null?"windows":platform;
 
         ChromiumOptions<?> options;
 
@@ -112,6 +116,7 @@ public class BaseTest {
     }
 
     @After
+    @AfterClass
     public static void tear_down(){
         driver.quit();
     }
