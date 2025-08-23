@@ -18,6 +18,7 @@ public class HomeTest extends BaseTest {
 
   @Test(priority=0)
     public void homeTest(){
+      HomePage homePage=new HomePage(driver);
        
         homePage.handleLocation("Old Gajuwaka,Visakhapatnam");
         homePage.setSearchField("Car Wash Services");

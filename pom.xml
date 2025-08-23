@@ -16,7 +16,7 @@
     <maven.compiler.target>21</maven.compiler.target>
     <surefire.version>3.5.3</surefire.version>
     <testng.version>7.11.0</testng.version>
-    <selenium.version>4.32.0</selenium.version>
+    <selenium.version>4.35.0</selenium.version>
     <allure.maven>2.15.2</allure.maven>
   </properties>
   <dependencies>
