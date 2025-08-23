@@ -24,6 +24,7 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import utilities.ConfigReader;
 
 public class BaseTest {
 
@@ -36,7 +37,7 @@ public class BaseTest {
     @Before
     public static void setUp() throws MalformedURLException {
 
-        String Execution="local";
+        String Execution= ConfigReader.getEnvironment();
 
         String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browser");
         String platform = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("platform");
@@ -86,7 +87,7 @@ public class BaseTest {
 
             options.merge(capabilities);
 
-            driver=new RemoteWebDriver(new URL("http://10.109.179.27:4444"),options);
+            driver=new RemoteWebDriver(new URL(ConfigReader.getRemoteUrl()),options);
 
         }else if(Execution.equalsIgnoreCase("local")){
             switch (browser.toLowerCase()) {
@@ -105,9 +106,9 @@ public class BaseTest {
                 "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
         );
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigReader.getImplicitWait()));
         driver.manage().window().maximize();
-        driver.get("https://www.justdial.com/");
+        driver.get(ConfigReader.getAppUrl());
     }
 
     @After

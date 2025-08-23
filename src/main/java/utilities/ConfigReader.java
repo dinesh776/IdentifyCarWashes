@@ -37,9 +37,6 @@ public class ConfigReader {
         return value;
     }
 
-    public static String getBrowser() {
-        return getProperty("browser");
-    }
 
     public static String getAppUrl() {
         return getProperty("app.url");
@@ -53,12 +50,16 @@ public class ConfigReader {
         return Integer.parseInt(getProperty("explicit.wait"));
     }
 
-    public static int getPageLoadTimeout() {
-        return Integer.parseInt(getProperty("page.load.timeout"));
-    }
-
     public static String getTestDataFile() {
         return getProperty("test.data.file");
+    }
+
+    public static String getNumberOfServices(){
+        return getProperty("total.number.of.services");
+    }
+
+    public static String getTestDataSheetName(){
+        return getProperty("test.data.sheet.name");
     }
 
     public static String getExtentReportPath() {
@@ -69,7 +70,11 @@ public class ConfigReader {
         return getProperty("screenshot.path");
     }
 
-    public static String getVideoRecordingPath() {
-        return getProperty("video.recording.path");
+    public static String getEnvironment(){
+        return getProperty("environment");
+    }
+
+    public static String getRemoteUrl(){
+        return getProperty("remote.url");
     }
 }

@@ -1,5 +1,6 @@
 package testcases;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import hooks.BaseTest;
@@ -7,26 +8,23 @@ import pages.HomePage;
 import pages.ResultsPage;
 import pages.ServicePage;
 import pages.FreeListingPage;
+import utilities.ExcelUtility;
 
+import java.util.HashMap;
 import java.util.List;
 
 
 public class HomeTest extends BaseTest {
 
-    @Test()
-    public void testHome(){
-        HomePage homePage=new HomePage(driver);
-        homePage.handlePopups();
-
-        homePage.clickOnCategories();
-        List<String>s=homePage.gatherCategories();
-        System.out.println(s);
-        homePage.closeCategories();
-
+  @Test(priority=0)
+    public void homeTest(){
+       
         homePage.handleLocation("Old Gajuwaka,Visakhapatnam");
         homePage.setSearchField("Car Wash Services");
         homePage.clickOnSearchWithWait();
     }
+
+
   
     @Test(priority = 1)
     public void testServicePage(){
