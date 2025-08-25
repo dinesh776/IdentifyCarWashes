@@ -1,21 +1,18 @@
 package hooks;
 
 
+import java.io.ByteArrayInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
-import org.openqa.selenium.Platform;
+import io.cucumber.java.*;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.Optional;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.chromium.ChromiumOptions;
@@ -113,6 +110,17 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigReader.getImplicitWait()));
         driver.manage().window().maximize();
         driver.get(ConfigReader.getAppUrl());
+    }
+
+    @AfterStep
+    public static void captureScreenshotOnFailure(Scenario scenario){
+        if (scenario.isFailed()) {
+            // Capture screenshot on failure
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+            // Attach screenshot to Allure report
+            Allure.addAttachment("Screenshot on Failure", new ByteArrayInputStream(screenshot));
+        }
     }
 
     @After

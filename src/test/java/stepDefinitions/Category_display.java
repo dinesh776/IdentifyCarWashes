@@ -12,7 +12,8 @@ import pages.HomePage;
 
 public class Category_display {
 	HomePage hp = new HomePage(BaseTest.getDriver());
-	
+    private static int n=0;
+
 	@Given("the user enters the home page")
 	public void the_user_enters_the_home_page() {
 	   System.out.println("Entered home page");

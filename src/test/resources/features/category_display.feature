@@ -7,3 +7,4 @@ Feature: Category Display
     And handles any popups
     When the user clicks on the View All Categories button
     Then all 39 categories should appear in the popup
+

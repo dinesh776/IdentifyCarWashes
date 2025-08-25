@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75ca4c1f-f822-45a3-90d7-930de540a69f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/allure-results/03b10c4d-e38a-40c1-adb7-d33e4fe2fc9a-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/11fb74c3-0394-4427-9ec7-728398b8935b-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/25bd66f8-e617-408d-bd90-696e05c3dacc-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/300659da-5ba3-412c-b049-82480334b45d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/5d2e11fe-5614-4d90-85ea-cf2149b70f6c-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/676a637f-1e23-41d1-9b88-3a5fd41c5fc5-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/7f2adc77-ddc2-467f-8d57-55751b59b122-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/b9aa1b4d-06de-44e7-b6b9-ad49b50404a9-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/bbdce2a0-ef0e-43ce-9372-f6e644bb9161-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/AllureReportOpener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reRun/RetryAnalyzer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/reRun/RetryListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/category_display.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/category_display.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;umashankartech&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dinesh776/IdentifyCarWashes.git&quot;,
+    &quot;accountId&quot;: &quot;6a0dcf8a-a6ec-4f95-a307-9be29f588b0f&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="31g4Se4dMcRIjlX2AHfnmQ9OQfy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.C:/Users/2421228/eclipse-workspace/v1/IdentifyCarWashes/testng.xml.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/2421228/eclipse-workspace/v1/IdentifyCarWashes",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="C:/Users/2421228/eclipse-workspace/v1/IdentifyCarWashes/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="IdentifyServices" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/2421228/eclipse-workspace/v1/IdentifyCarWashes/testng.xml" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75ca4c1f-f822-45a3-90d7-930de540a69f" name="Changes" comment="" />
+      <created>1755932383568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755932383568</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:io.cucumber:cucumber-java" />
+    <option featureType="dependencySupport" implementationName="java:junit:junit" />
+    <option featureType="dependencySupport" implementationName="java:org.testng:testng" />
+    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava3:rxjava" />
+    <option featureType="dependencySupport" implementationName="java:org.seleniumhq.selenium:selenium-java" />
+    <option featureType="dependencySupport" implementationName="java:io.qameta.allure:allure-java-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+</project>
