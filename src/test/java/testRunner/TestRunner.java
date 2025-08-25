@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
  * TestRunner class to configure and execute Cucumber tests using TestNG.
  */
 @CucumberOptions(
-        features = {"src/test/resources/features/retrieve_items.feature"},  // Path to feature files
+        features = {"src/test/resources/features"},  // Path to feature files
         glue = {"stepDefinitions", "hooks"},  // Step definitions and hooks
         //tags = "@Sanity or @Feildlevel or @LoginFeature or @DataExport or @GlossySprays or @Regression",  // Tags to filter scenarios
 //        plugin = {

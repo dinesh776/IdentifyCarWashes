@@ -9,141 +9,149 @@
 
   <name>IdentifyServices</name>
   <url>http://maven.apache.org</url>
-<!--  ✅ Project Properties  -->
-<properties>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <maven.compiler.source>21</maven.compiler.source>
-  <maven.compiler.target>21</maven.compiler.target>
-  <surefire.version>3.5.3</surefire.version>
-  <testng.version>7.11.0</testng.version>
-  <selenium.version>4.32.0</selenium.version>
-  <allure.maven>2.15.2</allure.maven>
+  <!--  ✅ Project Properties  -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <surefire.version>3.5.3</surefire.version>
+    <testng.version>7.11.0</testng.version>
+    <selenium.version>4.35.0</selenium.version>
+    <allure.maven>2.15.2</allure.maven>
   </properties>
-<dependencies>
-  <!--  ✅ Selenium Java  -->
-  <!-- 
-      https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java  -->
-  <dependency>
+  <dependencies>
+    <!--  ✅ Selenium Java  -->
+    <!--
+            https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java  -->
+    <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>${selenium.version}</version>
-  </dependency>
-  <!--  ✅ TestNG  -->
-  <!--  https://mvnrepository.com/artifact/org.testng/testng  -->
-  <dependency>
+    </dependency>
+    <!--  ✅ TestNG  -->
+    <!--  https://mvnrepository.com/artifact/org.testng/testng  -->
+    <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>${testng.version}</version>
     <scope>test</scope>
-  </dependency>
-  <!--  ✅ Apache POI (for Excel read/write)  -->
-  <!--  https://mvnrepository.com/artifact/org.apache.poi/poi  -->
-  <dependency>
+    </dependency>
+    <!--  ✅ Apache POI (for Excel read/write)  -->
+    <!--  https://mvnrepository.com/artifact/org.apache.poi/poi  -->
+    <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
     <version>5.4.0</version>
-  </dependency>
-  <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple  -->
-  <dependency>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple  -->
+    <dependency>
     <groupId>com.googlecode.json-simple</groupId>
     <artifactId>json-simple</artifactId>
     <version>1.1.1</version>
-  </dependency>
-  <!--  https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml  -->
-  <dependency>
+    </dependency>
+    <!--  https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml  -->
+    <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
     <version>5.4.0</version>
-  </dependency>
-  <!--  ✅ Logging (optional but useful)  -->
-  <!-- 
-      https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core  -->
-  <dependency>
+    </dependency>
+    <!--  ✅ Logging (optional but useful)  -->
+    <!--
+            https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core  -->
+    <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-core</artifactId>
     <version>2.24.2</version>
-  </dependency>
-  <!-- 
-      https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api  -->
-  <dependency>
+    </dependency>
+    <!--
+            https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api  -->
+    <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
     <version>2.24.2</version>
-  </dependency>
-  <!--  https://mvnrepository.com/artifact/com.aventstack/extentreports  -->
-  <dependency>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j2-impl</artifactId>
+      <version>2.25.1</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!--  https://mvnrepository.com/artifact/com.aventstack/extentreports  -->
+    <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
     <version>5.1.2</version>
-  </dependency>
-  <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-java  -->
-  <dependency>
+    </dependency>
+    <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-java  -->
+    <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
     <version>7.23.0</version>
-  </dependency>
-  <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-testng  -->
-  <dependency>
+    </dependency>
+    <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-testng  -->
+    <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-testng</artifactId>
     <version>7.23.0</version>
-  </dependency>
-  <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-junit  -->
-  <dependency>
+    </dependency>
+    <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-junit  -->
+    <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
     <version>7.23.0</version>
     <scope>test</scope>
-  </dependency>
-  <!-- 
-      https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm  -->
-  <dependency>
+    </dependency>
+    <!--
+            https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm  -->
+    <dependency>
     <groupId>io.qameta.allure</groupId>
     <artifactId>allure-cucumber7-jvm</artifactId>
     <version>2.29.1</version>
     <scope>test</scope>
-  </dependency>
-  <!--  https://mvnrepository.com/artifact/io.qameta.allure/allure-testng  -->
-  <dependency>
+    </dependency>
+    <!--  https://mvnrepository.com/artifact/io.qameta.allure/allure-testng  -->
+    <dependency>
     <groupId>io.qameta.allure</groupId>
     <artifactId>allure-testng</artifactId>
     <version>2.29.1</version>
     <scope>test</scope>
-  </dependency>
+    </dependency>
 </dependencies>
 <!--  ✅ Maven Plugins  -->
 <build>
   <plugins>
-      <!--  Compiler plugin  -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.13.0</version>
-        <configuration>
+    <!--  Compiler plugin  -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.13.0</version>
+      <configuration>
         <source>${maven.compiler.source}</source>
         <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
-      <!--  ✅ Surefire plugin to run TestNG tests  -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire.version}</version>
-        <configuration>
-        <!--  Points to TestNG suite  -->
-        <suiteXmlFiles>
-        <suiteXmlFile>testng.xml</suiteXmlFile>
-        </suiteXmlFiles>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>io.qameta.allure</groupId>
-        <artifactId>allure-maven</artifactId>
-        <version>${allure.maven}</version>
-        <configuration>
-        <reportVersion>${allure.maven}</reportVersion>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+      </configuration>
+    </plugin>
+    <!--  ✅ Surefire plugin to run TestNG tests  -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>${surefire.version}</version>
+      <configuration>
+      <!--  Points to TestNG suite  -->
+      <suiteXmlFiles>
+      <suiteXmlFile>testng.xml</suiteXmlFile>
+      </suiteXmlFiles>
+      </configuration>
+    </plugin>
+    <plugin>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-maven</artifactId>
+    <version>${allure.maven}</version>
+    <configuration>
+    <reportVersion>${allure.maven}</reportVersion>
+    </configuration>
+    </plugin>
+  </plugins>
+</build>
 </project>

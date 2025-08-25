@@ -13,8 +13,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelUtility {
 	
 	public static HashMap<String, String> Items = new HashMap();
+	private static final String filepath=ConfigReader.getTestDataFile();
+	private static final String sheetName=ConfigReader.getTestDataSheetName();
 
-	public static List<HashMap<String, String>> data(String filepath, String sheetName) {
+	public static List<HashMap<String, String>> getTestData() {
 		
 		List<HashMap<String, String>> mydata = new ArrayList<>();
 		
@@ -26,11 +28,11 @@ public class ExcelUtility {
 			for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) 
 				{
 				Row currentRow = sheet.getRow(i);
-				HashMap<String, String> currentHash = new HashMap<String, String>();
+				HashMap<String, String> currentHash = new HashMap<>();
 				for (int j = 0; j < currentRow.getPhysicalNumberOfCells(); j++) 
 					{
 					Cell currentCell = currentRow.getCell(j);
-					switch (currentCell.getCellType()) 
+					switch (currentCell.getCellType())
 						{
 							case STRING:
 								currentHash.put(HeaderRow.getCell(j).getStringCellValue(), currentCell.getStringCellValue());

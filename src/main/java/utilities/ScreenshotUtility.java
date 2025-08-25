@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 
 public class ScreenshotUtility{
-	 public static String filepath = "./ScreenShots/";
+	 public static String filepath = ConfigReader.getScreenshotPath();
 
 	    public static String screenShotTC(WebDriver scdriver, String fileName) {
 	        File directory = new File(filepath);

@@ -1,7 +1,6 @@
 package pages;
 
 import base.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class HomePage extends BasePage {
 
@@ -78,7 +76,7 @@ public class HomePage extends BasePage {
 
     public void handleLocation(String locationVal){
         if(!locationVal.equalsIgnoreCase("near me")){
-            wait.until(ExpectedConditions.visibilityOf(location)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(location)).click();
             wait.until(ExpectedConditions.visibilityOf(location)).sendKeys(locationVal);
             wait.until(ExpectedConditions.elementToBeClickable(customLocation)).click();
         }

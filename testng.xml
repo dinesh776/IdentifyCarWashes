@@ -5,7 +5,6 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="platform" value="windows"/>
     <classes>
-
       <class name="testRunner.TestRunner"/>
     </classes>
   </test> <!-- Test -->
