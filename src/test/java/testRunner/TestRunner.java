@@ -8,12 +8,13 @@ import org.testng.annotations.BeforeSuite;
 //import com.inkarto.utilities.AllureReportOpener;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.DataProvider;
 
 /**
  * TestRunner class to configure and execute Cucumber tests using TestNG.
  */
 @CucumberOptions(
-        features = {"src/test/resources/features/category_display.feature"},  // Path to feature files
+        features = {"src/test/resources/features/excel_reading.feature"},  // Path to feature files
         glue = {"stepDefinitions", "hooks"},  // Step definitions and hooks
         //tags = "@Sanity or @Feildlevel or @LoginFeature or @DataExport or @GlossySprays or @Regression",  // Tags to filter scenarios
 //        plugin = {
@@ -38,5 +39,11 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     public void afterSuite() {
         // Open Allure report after test execution
         //AllureReportOpener.openAllureReport();
+    }
+
+    @Override
+    @DataProvider()
+    public Object[][] scenarios(){
+        return super.scenarios();
     }
 }

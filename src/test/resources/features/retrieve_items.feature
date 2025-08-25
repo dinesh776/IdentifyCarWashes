@@ -1,5 +1,5 @@
 @regression
-Feature: Filter Functionality
+Feature: Validate Filtered List Item Count
 
   Background:
     Given the user is on the home page
@@ -9,6 +9,6 @@ Feature: Filter Functionality
     Then the user should be redirected to the service page
 
   @regression
-  Scenario: Verify filter application for ratings
+  Scenario: Verify filtered item count matches expected
     When the user selects "4.5+" rating in filters
-    Then all result items should have a rating of 4.5 or higher
+    Then the number of items retrieved are

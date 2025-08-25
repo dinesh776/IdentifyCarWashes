@@ -77,4 +77,10 @@ public class ConfigReader {
     public static String getRemoteUrl(){
         return getProperty("remote.url");
     }
+
+    public static String getExpectedVotes(){return getProperty("expected.votes");}
+
+    public static String getJsonFilePath(){
+        return getProperty("json.file.path");
+    }
 }
