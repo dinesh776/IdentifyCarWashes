@@ -118,6 +118,12 @@
     <version>2.29.1</version>
     <scope>test</scope>
     </dependency>
+    <!--  https://mvnrepository.com/artifact/com.aventstack/extentreports-cucumber4-adapter  -->
+    <dependency>
+      <groupId>tech.grasshopper</groupId>
+      <artifactId>extentreports-cucumber7-adapter</artifactId>
+      <version>1.14.0</version>
+    </dependency>
 </dependencies>
 <!--  ✅ Maven Plugins  -->
 <build>

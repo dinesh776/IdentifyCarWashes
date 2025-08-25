@@ -10,7 +10,7 @@ public class AllureReportOpener {
         try {
             // Step 1: Generate the Allure report with --clean
             ProcessBuilder generate = new ProcessBuilder(
-                    "C:\\Users\\2421228\\Downloads\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
+                    "C:\\Users\\2421185\\Documents\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
                     "generate",
                     "target/allure-results",
                     "--clean",
@@ -23,7 +23,7 @@ public class AllureReportOpener {
 
             // Step 2: Open the generated report
             ProcessBuilder open = new ProcessBuilder(
-                    "C:\\Users\\2421228\\Downloads\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
+                    "C:\\Users\\2421185\\Documents\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
                     "open",
                     "target/allure-report"
             );
