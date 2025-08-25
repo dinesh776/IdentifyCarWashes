@@ -22,6 +22,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import utilities.ConfigReader;
+import utilities.ScreenshotUtility;
 
 public class BaseTest {
 
@@ -115,11 +116,13 @@ public class BaseTest {
     @AfterStep
     public static void captureScreenshotOnFailure(Scenario scenario){
         if (scenario.isFailed()) {
-            // Capture screenshot on failure
-            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+            byte[] screenshot=ScreenshotUtility.screenShotTC(BaseTest.getDriver());
+            scenario.attach(screenshot, "image/png",scenario.getName());
 
             // Attach screenshot to Allure report
             Allure.addAttachment("Screenshot on Failure", new ByteArrayInputStream(screenshot));
+
         }
     }
 
