@@ -80,4 +80,15 @@ public class HomeTest extends BaseTest {
 //        System.out.println(flp.errorDisplay());
 //    }
 
+//@Test(priority=1)
+//public void freeListing()  {
+//  FreeListingPage flp = new FreeListingPage(driver);
+//  flp.freeListingPage();
+//  flp.mobileNumber("9346659342");
+//  flp.startNow();
+//  System.out.println(flp.otpPopUp());
+//  flp.handlingPopUp();
+////        System.out.println(flp.errorDisplay());
+//}
+
 }
