@@ -10,7 +10,7 @@ import pages.FreeListingPage;
 public class Free_listing_login {
 	FreeListingPage fp = new FreeListingPage(BaseTest.getDriver());
 	
-	@Given("the user enters the Free Listing page")
+	@Given("the user is on the Free Listing page")
 	public void the_user_enters_the_free_listing_page() {
 	    fp.freeListingPage();
 	}
@@ -20,12 +20,12 @@ public class Free_listing_login {
 	    fp.mobileNumber("8639284125");
 	}
 
-	@When("the user clicks on the submit button")
+	@When("the user clicks the submit button")
 	public void the_user_clicks_on_the_submit_button() {
 	   fp.startNow();
 	}
 
-	@Then("the OTP popup will appear")
+	@Then("the OTP popup should appear")
 	public void the_otp_popup_will_appear() {
 	    fp.handlingPopUp();
 	    // method for pop up visibility
@@ -37,12 +37,12 @@ public class Free_listing_login {
 		
 	}
 	
-	@Then("the error message {string} will appear in free listing page")
+	@Then("the error message {string} should appear on the Free Listing page")
 	public void the_error_message_will_appear_in_free_listing_page(String string) {
 	    Assert.assertEquals(string, fp.errorDisplay());
 	}
 
-	@Then("the error message {string} will appear in free listing page for empty field")
+	@Then("the error message {string} should appear on the Free Listing page for an empty field")
 	public void the_error_message_will_appear_in_free_listing(String string) {
 		Assert.assertEquals(string, fp.errorDisplay());
 	}

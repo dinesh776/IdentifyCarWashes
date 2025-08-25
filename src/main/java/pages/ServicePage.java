@@ -138,7 +138,7 @@ public class ServicePage extends BasePage {
                     if(rating4.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating4);
                     }break;
-                case "5.0":
+                case "5":
                     if(rating5.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating5);
                     }break;

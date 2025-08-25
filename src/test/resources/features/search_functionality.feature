@@ -1,18 +1,19 @@
-@justdial @search
+@sanity
 Feature: Search Functionality
 
-  @positive @search
-  Scenario: Successful search
-    Given the user enters the home page
-    And handles any popups
-    When the user enters the location and a valid service
-    And the user clicks on the search button
-    Then the user is redirected to the service page
+  Background:
+    Given the user is on the home page
+    And all popups are handled
 
-  @negative @search
+  @sanity
+  Scenario: Successful search
+    When the user enters a location "Near me" and a valid service "Car Washing Service"
+    And the user clicks the search button
+    Then the user should be redirected to the service page
+
+
+  @regression
   Scenario: Unsuccessful search
-    Given the user enters the home page
-    And handles any popups
-    When the user enters the location and leaves the service field empty
-    And the user clicks on the search button with invalid data
-    Then the user stays in the home page
+    When the user enters a location and leaves the service field empty
+    And the user clicks the search button with invalid data
+    Then the user should remain on the home page

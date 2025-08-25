@@ -102,16 +102,22 @@ public class ResultsPage extends BasePage {
 
         for(int i=1;i<=numberOfServices;i++){
             String path=ratingXpath+"["+i+"]";
-            WebElement rating=driver.findElement(By.xpath(path));
+            WebElement rating;
+            try {
+                rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
+            }catch (Exception e){
+                jsExecutor.executeScript("window.scrollBy(0, 500);");
+                rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
+            }
             String actualVotes=rating.getText().split(" ")[0];
             actualVotes=actualVotes.replaceAll(",","");
 
             if(!actualVotes.trim().isEmpty()){
                 try{
                     if(Integer.parseInt(actualVotes)>expectedVotes){
-                        String title=driver.findElement(By.xpath("(//h3)["+i+"]")).getText();
+                        String title=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//h3)["+i+"]"))).getText();
 
-                        WebElement callButton=driver.findElement(By.xpath("(//div[contains(@class,'callbutton')])["+i+"]"));
+                        WebElement callButton=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[contains(@class,'callbutton')])["+i+"]")));
                         String mobileNumber=callButton.getText();
 
                         if(mobileNumber.startsWith("Show")){
@@ -128,8 +134,6 @@ public class ResultsPage extends BasePage {
                     System.out.println(e.getMessage());
                 }
 
-            }else {
-                i--;
             }
         }
         return result;

@@ -21,9 +21,9 @@ public class Filter_functionality {
 	   sp.applyFilters();
 	}
 
-	@Then("the result items rating should be greater than or equal to the {double} rating")
+	@Then("all result items should have a rating of {double} or higher")
 	public void the_result_items_rating_should_be_greater_than_or_equal_to_the_selected_rating(double rating) {
-	    Assert.assertTrue(Double.parseDouble(rp.getFirstRating())>rating);
+	    Assert.assertTrue(Double.parseDouble(rp.getFirstRating())>=rating);
 	}
 	
 
