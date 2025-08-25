@@ -42,6 +42,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//button[contains(@class,'all_filter_container')]")
     WebElement filters;
 
+    @FindBy(xpath = "//div[contains(@class,'page_title')]/h1")
+    WebElement serviceMsg;
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -66,6 +69,10 @@ public class HomePage extends BasePage {
             categoriesList.add(category);
         }
         return categoriesList;
+    }
+
+    public String getServiceTitle(){
+        return wait.until(ExpectedConditions.visibilityOf(serviceMsg)).getText();
     }
 
 

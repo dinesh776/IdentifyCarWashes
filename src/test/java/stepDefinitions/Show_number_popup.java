@@ -19,12 +19,12 @@ public class Show_number_popup {
 	   sp.applyFilters();
 	}
 
-	@When("the user clicks on the show number button")
+	@When("the user clicks the show number button")
 	public void the_user_clicks_on_the_show_number_button() {
 	    rp.clickOnShow();
 	}
 
-	@Then("the phone number will appear in the popup")
+	@Then("the phone number should appear in the popup")
 	public void the_phone_number_will_appear_in_the_popup() {
 	 Assert.assertNotNull(rp.getContact());
 	}

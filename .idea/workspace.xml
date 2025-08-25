@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd0a20fc-eebc-49ad-b041-cdeeeec4c439" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ServicePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ServicePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ConfigReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ExcelUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ExcelUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/jsonutility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/JsonUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testcases/HomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testcases/HomeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/category_display.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/category_display.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/filter_functionality.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/filter_functionality.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/free_listing_login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/free_listing_login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/retrieve_items.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/retrieve_items.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/search_functionality.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/search_functionality.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/service_page_query.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/service_page_query.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/show_number_popup.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/show_number_popup.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testdata/test_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/test_data.xlsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="31dd8YeERQ5wrPTMbjty8YdWyuw" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Scenario: .executor": "Run",
+    "Cucumber Java.Scenario: Successful search from Excel.executor": "Run",
+    "Cucumber Java.Scenario: Successful search.executor": "Run",
+    "Cucumber Java.Scenario: Verify that the number of displayed items matches the expected count.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml.executor": "Run",
+    "TestNG.TestRunner.executor": "Run",
+    "git-widget-placeholder": "log",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/2421185/Documents/JustDail/IdentifyCarWashes",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RunManager" selected="TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml">
+    <configuration name="Scenario: Successful search from Excel" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/excel_reading.feature" />
+      <option name="GLUE" value="stepDefinitions hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="IdentifyServices" />
+      <option name="NAME_FILTER" value="^Successful search from Excel$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Successful search from Excel$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Successful search from Excel" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Successful search" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/search_functionality.feature" />
+      <option name="GLUE" value="stepDefinitions hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="IdentifyServices" />
+      <option name="NAME_FILTER" value="^Successful search$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Successful search$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Successful search" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: " type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/search_functionality.feature" />
+      <option name="GLUE" value="stepDefinitions hooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="IdentifyServices" />
+      <option name="NAME_FILTER" value="^$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: " />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="IdentifyServices" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="IdentifyServices" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testRunner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testRunner" />
+      <option name="MAIN_CLASS_NAME" value="testRunner.TestRunner" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml" />
+        <item itemvalue="Cucumber Java.Scenario: " />
+        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: Successful search from Excel" />
+        <item itemvalue="Cucumber Java.Scenario: Successful search" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd0a20fc-eebc-49ad-b041-cdeeeec4c439" name="Changes" comment="" />
+      <created>1755857725462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755857725462</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

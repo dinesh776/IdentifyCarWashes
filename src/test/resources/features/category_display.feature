@@ -1,9 +1,9 @@
-@justdial @categories
+@sanity
 Feature: Category Display
 
-  @ui @categories
-  Scenario: Check all categories are displayed
-    Given the user enters the home page
-    And handles any popups
-    When the user clicks on the View All Categories button
-    Then all 39 categories should appear in the popup
+  @sanity
+  Scenario: Verify all categories are visible
+    Given the user is on the home page
+    And all popups are handled
+    When the user clicks View All Categories
+    Then a popup should display all 39 categories

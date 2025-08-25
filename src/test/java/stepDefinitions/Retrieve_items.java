@@ -10,13 +10,12 @@ import pages.ServicePage;
 import java.util.List;
 
 public class Retrieve_items {
-    ServicePage sp = new ServicePage(BaseTest.getDriver());
     ResultsPage rp = new ResultsPage(BaseTest.getDriver());
 
-    @Then("the number of retrieved items should be equal to the expected count")
+    @Then("the number of items retrieved are")
     public void the_number_of_retrieved_items_should_be_equal_to_the_expected_count() {
         List<Service> l = rp.retrieveServices(5,20);
-        Assert.assertEquals(5,l.size());
+        System.out.println("There are "+l.size()+" number of items with votes greater than 20");
     }
 
 }

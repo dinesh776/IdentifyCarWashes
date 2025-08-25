@@ -27,13 +27,13 @@ public class HomeTest extends BaseTest {
 //      }
 //    }
 
-  public static void main(String[] args) {
-    List<HashMap<String ,String>> res=ExcelUtility.getTestData();
-    System.out.println("| S.No  | Location  | Service Name  | Quick Filters | Sort By | Ratings |");
-    for(HashMap<String,String> m : res){
-      System.out.println("| "+m.get("S.No")+" | "+m.get("Location")+" | "+m.get("Service Name")+" | "+m.get("Quick Filters")+" | "+m.get("Sort By")+" | "+m.get("Ratings")+" |");
-      System.out.println();
-  }}
+//  public static void main(String[] args) {
+//    List<HashMap<String ,String>> res=ExcelUtility.getTestData();
+//    System.out.println("| S.No  | Location  | Service Name  | Quick Filters | Sort By | Ratings |");
+//    for(HashMap<String,String> m : res){
+//      System.out.println("| "+m.get("S.No")+" | "+m.get("Location")+" | "+m.get("Service Name")+" | "+m.get("Quick Filters")+" | "+m.get("Sort By")+" | "+m.get("Ratings")+" |");
+//      System.out.println();
+//  }}
 
 
   

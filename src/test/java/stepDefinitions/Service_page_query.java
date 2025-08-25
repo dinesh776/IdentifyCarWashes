@@ -15,7 +15,7 @@ public class Service_page_query {
 	    rp.setMobileNumber("9876345342");
 	}
 
-	@Then("the OTP window will appear")
+	@Then("the OTP window should appear")
 	public void the_otp_window_will_appear() {
 		Assert.assertEquals("Welcome", rp.getWelcomeMsg());  
 	}
@@ -35,22 +35,22 @@ public class Service_page_query {
 		return;
 	}
 	
-	@When("the user clicks on the service page submit button")
+	@When("the user clicks the service page submit button")
 	public void the_user_clicks_on_the_service_page_submit_button() {
 		rp.clickOnSendQuery();
 	}
 	
-	@Then("the error message {string} will appear in service page for invalid number")
+	@Then("the error message {string} should appear on the service page for invalid number")
 	public void the_error_message_will_appear_in_service_page_for_invalid_number(String string) {
 		Assert.assertEquals(string, rp.getMobileErrorMsg());
 	}
 
-	@Then("the error message {string} will appear in service page for invalid name")
+	@Then("the error message {string} should appear on the service page for invalid name")
 	public void the_error_message_will_appear_in_service_page_for_invalid_name(String string) {
 	    Assert.assertEquals(string, rp.getNameErrorMsg());
 	}
 
-	@Then("the error message {string} will appear in service page for invalid name and number")
+	@Then("the error message {string} should appear on the service page for invalid name and number")
 	public void the_error_message_will_appear_in_service_page_for_invalid_name_and_number(String string) {
 	    Assert.assertEquals(string, rp.getNameErrorMsg());
 	}
