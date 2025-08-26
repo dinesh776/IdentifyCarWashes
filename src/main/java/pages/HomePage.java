@@ -10,58 +10,106 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Page Object class representing the Home Page of the application.
+ * Inherits common functionality from BasePage.
+ */
 public class HomePage extends BasePage {
 
-    @FindBy(xpath = "//a[text()='Maybe Later']")
-    WebElement popUp;
 
-    @FindBy(id = "main-auto")
-    WebElement searchField;
-
-    @FindBy(xpath = "//div[@class='search_button']")
-    WebElement searchButton;
-
-    @FindBy(id = "city-auto-sug")
-    WebElement location;
-
-    @FindBy(id = "react-autowhatever-city-auto-suggest--item-1")
-    WebElement customLocation;
-
-    @FindBy(id="popular_categories")
-    WebElement popularCategories;
-
-    @FindBy(xpath = "//div[contains(@class,'sidemenu_text')]")
-    List<WebElement> categories;
-
-    @FindBy(id = "pop_close")
-    WebElement popClose;
-
-    @FindBy(xpath = "//span[@aria-label='Close Banner']")
-    WebElement closeBanner;
-
-    @FindBy(xpath = "//button[contains(@class,'all_filter_container')]")
-    WebElement filters;
-
-    @FindBy(xpath = "//div[contains(@class,'page_title')]/h1")
-    WebElement serviceMsg;
-
+    // Constructor initializes WebDriver and page elements
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
+
+    // WebElement for dismissing the initial popup
+    @FindBy(xpath = "//a[text()='Maybe Later']")
+    WebElement popUp;
+
+
+    // WebElement for the search input field
+    @FindBy(id = "main-auto")
+    WebElement searchField;
+
+
+    // WebElement for the search button
+    @FindBy(xpath = "//div[@class='search_button']")
+    WebElement searchButton;
+
+
+    // WebElement for the location input field
+    @FindBy(id = "city-auto-sug")
+    WebElement location;
+
+
+    // WebElement for selecting a custom location from suggestions
+    @FindBy(id = "react-autowhatever-city-auto-suggest--item-1")
+    WebElement customLocation;
+
+
+    // WebElement for popular categories section
+    @FindBy(id="popular_categories")
+    WebElement popularCategories;
+
+
+    // List of category elements in the side menu
+    @FindBy(xpath = "//div[contains(@class,'sidemenu_text')]")
+    List<WebElement> categories;
+
+
+    // WebElement to close the category popup
+    @FindBy(id = "pop_close")
+    WebElement popClose;
+
+
+    // WebElement to close the banner popup
+    @FindBy(xpath = "//span[@aria-label='Close Banner']")
+    WebElement closeBanner;
+
+
+    // WebElement for filters section
+    @FindBy(xpath = "//button[contains(@class,'all_filter_container')]")
+    WebElement filters;
+
+
+    // WebElement for the service title message
+    @FindBy(xpath = "//div[contains(@class,'page_title')]/h1")
+    WebElement serviceMsg;
+
+
+
+    /**
+     * Handles popups that appear on the home page.
+     */
     public void handlePopups(){
         popUp.click();
         closeBanner.click();
     }
 
+
+    /**
+     * Clicks on the popular categories section.
+     */
     public void clickOnCategories(){
         popularCategories.click();
     }
 
+
+    /**
+     * Retrieves the current page title.
+     * @return Title of the current page
+     */
     public String getTitle(){
         return driver.getTitle();
     }
 
+
+    /**
+     * Gathers all category names from the side menu.
+     * @return List of category names
+     */
     public List<String> gatherCategories(){
         List<String> categoriesList=new ArrayList<>();
         for(WebElement e:categories){
@@ -71,16 +119,26 @@ public class HomePage extends BasePage {
         return categoriesList;
     }
 
+
+    /**
+     * Retrieves the service title displayed on the results page.
+     * @return Service title text
+     */
     public String getServiceTitle(){
         return wait.until(ExpectedConditions.visibilityOf(serviceMsg)).getText();
     }
 
-
+// closes the categories popup
     public void closeCategories(){
         popClose.click();
     }
 
 
+
+    /**
+     * Handles location input and selection from suggestions.
+     * @param locationVal Location value to be entered
+     */
     public void handleLocation(String locationVal){
         if(!locationVal.equalsIgnoreCase("near me")){
             wait.until(ExpectedConditions.elementToBeClickable(location)).click();
@@ -89,10 +147,19 @@ public class HomePage extends BasePage {
         }
     }
 
+
+    /**
+     * Sets the service name in the search field.
+     * @param service Service name to be searched
+     */
     public void setSearchField(String service){
         searchField.sendKeys(service);
     }
 
+
+    /**
+     * Clicks the search button and waits for filters to be visible.
+     */
     public void clickOnSearchWithWait(){
         searchButton.click();
         wait.until(ExpectedConditions.visibilityOf(filters));

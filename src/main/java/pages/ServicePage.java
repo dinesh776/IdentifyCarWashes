@@ -5,17 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
+/**
+ * This class represents the Service Page and provides methods to interact with
+ * filter and sorting options for services listed on the page.
+ */
 public class ServicePage extends BasePage {
 
     public ServicePage(WebDriver driver) {
         super(driver);
     }
 
+    // Main filter button
     @FindBy(xpath = "//button[contains(@class,'all_filter_container')]")
     WebElement filters;
 
 
-//    sort
+ // Sorting options
     @FindBy(xpath = "//span[text()='Relevance']")
     WebElement relevance;
 
@@ -26,7 +32,7 @@ public class ServicePage extends BasePage {
     WebElement popular;
 
 
-//    rating
+//    Rating filter options
     @FindBy(xpath = "//span[text()='Any']")
     WebElement rating1;
 
@@ -64,9 +70,16 @@ public class ServicePage extends BasePage {
     WebElement jdTrust;
 
 
+    //Clicks the main filter button to open the filter menu.
     public void clickFilters(){
         filters.click();
     }
+
+
+    /**
+     * Applies a quick filter based on the provided filter name.
+     * @param quickFilter The name of the quick filter to apply.
+     */
 
     public void setQuickFilter(String quickFilter){
         if(quickFilter.equalsIgnoreCase("none")){
@@ -86,6 +99,12 @@ public class ServicePage extends BasePage {
         }
 
     }
+
+
+    /**
+     * Sorts the services based on the selected sort value.
+     * @param sortValue The sorting criteria (e.g., "relevance", "rating", "popular").
+     */
 
     public void sortBy(String sortValue){
         if(sortValue.equalsIgnoreCase("none")){
@@ -116,6 +135,11 @@ public class ServicePage extends BasePage {
 
     }
 
+
+    /**
+     * Sets the rating filter based on the provided rating value.
+     * @param rating The rating filter to apply (e.g., "4.0+", "5").
+     */
     public void setRating(String rating){
         if(rating.equalsIgnoreCase("none")){
             return;
@@ -149,6 +173,8 @@ public class ServicePage extends BasePage {
             System.out.println(rating+" rating is not available in filters ...");
         }
     }
+
+    //Clicks the "Apply Filters" button to apply selected filters.
 
     public void applyFilters(){
         applyFilters.click();

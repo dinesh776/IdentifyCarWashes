@@ -29,22 +29,33 @@ public class BaseTest {
 
     public static WebDriver getDriver() {
         return driver;
-    }
+    } //Getter for webDriver
 
+    // Setup method executed before each scenario and before the test class
     @Before
     @BeforeClass
     public static void setUp() throws MalformedURLException {
 
+
+        // Setup method executed before each scenario and before the test class
         String Execution= ConfigReader.getEnvironment();
 
+
+        // Read browser and platform parameters from TestNG XML
         String browser = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("browser");
         String platform = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("platform");
 
+
+        // Set default values if parameters are not provided
         browser=browser==null?"chrome":browser;
         platform=platform==null?"windows":platform;
 
+
+        // ChromiumOptions is a generic type for Chrome/Edge options
         ChromiumOptions<?> options;
 
+
+        // Initialize browser-specific options
         switch (browser.toLowerCase()) {
             case "chrome":
                 options = new ChromeOptions();
@@ -57,6 +68,8 @@ public class BaseTest {
                 return;
         }
 
+
+        // Configure browser to avoid automation detection
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.setExperimentalOption("useAutomationExtension", false);
         options.addArguments("--disable-blink-features=AutomationControlled");
@@ -69,6 +82,7 @@ public class BaseTest {
         if(Execution.equalsIgnoreCase("remote")){
             DesiredCapabilities capabilities=new DesiredCapabilities();
 
+            //Set platform capability
             switch (platform){
                 case "windows":capabilities.setPlatform(Platform.WIN11);break;
                 case "linux":capabilities.setPlatform(Platform.LINUX);break;
@@ -77,6 +91,7 @@ public class BaseTest {
                     System.out.println("Invalid Platform");return;
             }
 
+            //set browser capability
             switch (browser){
                 case "chrome":capabilities.setBrowserName("chrome");break;
                 case "edge":capabilities.setBrowserName("MicrosoftEdge");break;
@@ -86,8 +101,11 @@ public class BaseTest {
                     System.out.println("Invalid browser");return;
             }
 
+            //Merge capabilities with options
             options.merge(capabilities);
 
+
+            // Initialize RemoteWebDriver with remote URL
             driver=new RemoteWebDriver(new URL(ConfigReader.getRemoteUrl()),options);
 
         }else if(Execution.equalsIgnoreCase("local")){
@@ -103,20 +121,30 @@ public class BaseTest {
             }
         }
 
+
+        // Disable WebDriver detection by JavaScript
         ((JavascriptExecutor) driver).executeScript(
                 "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
         );
 
+
+        // Set implicit wait and maximize window
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigReader.getImplicitWait()));
         driver.manage().window().maximize();
+        //NAvigate to application URL
         driver.get(ConfigReader.getAppUrl());
     }
 
+
+    // Capture screenshot after each step if scenario fails
     @AfterStep
     public static void captureScreenshotOnFailure(Scenario scenario){
         if (scenario.isFailed()) {
 
+            //Take screenshot
             byte[] screenshot=ScreenshotUtility.screenShotTC(BaseTest.getDriver());
+
+            // Attach screenshot to Cucumber report
             scenario.attach(screenshot, "image/png",scenario.getName());
 
             // Attach screenshot to Allure report
@@ -125,10 +153,12 @@ public class BaseTest {
         }
     }
 
+
+    // Teardown method executed after each scenario and after the test class
     @After
     @AfterClass
     public static void tear_down(){
         driver.quit();
-    }
+    } // close browser and end session
 
 }

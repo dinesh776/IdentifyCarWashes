@@ -17,25 +17,37 @@ import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.List;
+//Step definitions for reading test data from Excel, performing service search,
+        //applying filters, retrieving results, and saving them to a JSON file.
 
-public class Excel_reading {
 
-    private static final Logger logger = LogManager.getLogger(Excel_reading.class);
+        public class Excel_reading {
 
+            // Logger instance for logging test execution details
+            private static final Logger logger = LogManager.getLogger(Excel_reading.class);
+
+            // HashMap to store test data fetched from Excel
     HashMap<String, String> data;
-    HomePage hp = new HomePage(BaseTest.getDriver());
-    ServicePage sp = new ServicePage(BaseTest.getDriver());
-    ResultsPage rp = new ResultsPage(BaseTest.getDriver());
-    List<Service> res;
 
+            // Page object instances for interacting with different pages
+            HomePage hp = new HomePage(BaseTest.getDriver());
+            ServicePage sp = new ServicePage(BaseTest.getDriver());
+            ResultsPage rp = new ResultsPage(BaseTest.getDriver());
+            // List to store retrieved services
+            List<Service> res;
+
+            //Step to read data from Excel and perform search
+            //@param i Index of the test data row in Excel
     @When("the user enters a location and a valid service with required filters with index {int}")
     public void the_user_enters_the_location_and_a_valid_service(int i) {
         logger.info("Fetching test data from Excel for index: {}", i);
-        data = ExcelUtility.getData(i - 1);
+        data = ExcelUtility.getData(i - 1); // Convert to 0-based index
 
+        //Enter Location
         logger.info("Entering location: {}", data.get("Location"));
         hp.handleLocation(data.get("Location"));
 
+        //Enter service name
         logger.info("Entering service name: {}", data.get("Service Name"));
         hp.setSearchField(data.get("Service Name"));
 
@@ -52,7 +64,9 @@ public class Excel_reading {
         sp.applyFilters();
     }
 
-    @Then("user redirected to the specified service page")
+    //Step to validate that the user is redirected to the correct service page.
+
+            @Then("user redirected to the specified service page")
     public void validate_service_page() {
         logger.info("Validating redirection to service page for: {}", data.get("Service Name"));
         Assert.assertTrue(hp.getServiceTitle().contains(data.get("Service Name")),
@@ -60,25 +74,30 @@ public class Excel_reading {
         logger.info("Redirection successful");
     }
 
-    @Then("Retrieve services")
+    //Step to retrieve a list of services based on configuration settings.
+
+            @Then("Retrieve services")
     public void retrieve_services() {
         int count = Integer.parseInt(ConfigReader.getNumberOfServices());
         int votes = Integer.parseInt(ConfigReader.getExpectedVotes());
         logger.info("Retrieving top {} services with minimum {} votes", count, votes);
+                // Fetch services based on criteria
         res = rp.retrieveServices(count, votes);
         logger.debug("Retrieved services: {}", res);
     }
+            //Step to save the retrieved services to a JSON file.
 
-    @Then("Save services to json file")
+            @Then("Save services to json file")
     public void save_data() {
         logger.info("Saving services to JSON file for service: {}", data.get("Service Name"));
-        JsonUtility.writeJson(res, data.get("Service Name"));
+        JsonUtility.writeJson(res, data.get("Service Name"));  // Write data to JSON
     }
 
+        //Hook to finalize and save the JSON file after scenarios tagged with @SaveJson.
 
-    @After("@SaveJson")
+            @After("@SaveJson")
     public void save_json() {
         logger.info("Finalizing and saving JSON file");
-        JsonUtility.saveJson();
+        JsonUtility.saveJson(); //// Final save operation
     }
 }
