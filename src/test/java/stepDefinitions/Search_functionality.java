@@ -6,10 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import junit.framework.Assert;
 import pages.HomePage;
-import pages.ServicePage;
-import utilities.ExcelUtility;
-
-import java.util.HashMap;
 
 public class Search_functionality {
 	

@@ -1,0 +1,199 @@
+package utilities;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Objects;
+
+public class ReportOpener {
+
+    public static void openAllureReport() {
+        try {
+            String allurePath = ConfigReader.getAllureBatPath();
+            String resultsDir = "target/allure-results";
+            String reportDir = "target/allure-report";
+
+            // Step 1: Generate the report
+            ProcessBuilder generate = new ProcessBuilder(
+                    "cmd.exe", "/c", allurePath, "generate", resultsDir, "--clean", "-o", reportDir
+            );
+            generate.inheritIO();
+            Process genProcess = generate.start();
+            genProcess.waitFor();
+
+            // Step 2: Open Allure in a new terminal window
+            String command = String.format("start cmd.exe /k %s open %s", allurePath, reportDir);
+            ProcessBuilder open = new ProcessBuilder("cmd.exe", "/c", command);
+            open.start();
+
+            System.out.println("Allure report server started in a separate terminal.");
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void openLatestExtentReport() {
+        // Parent directory where timestamped folders are stored
+        File parentDir = new File("test-output");
+
+        if (!parentDir.exists() || !parentDir.isDirectory()) {
+            System.out.println("Parent directory not found: " + parentDir.getAbsolutePath());
+            return;
+        }
+
+        // Filter folders that start with "JustDailReport "
+        File latestReportFolder = Arrays.stream(parentDir.listFiles(File::isDirectory))
+                .filter(f -> f.getName().startsWith("JustDailReport "))
+                .max(Comparator.comparingLong(File::lastModified))
+                .orElse(null);
+
+        if (latestReportFolder == null) {
+            System.out.println("No timestamped report folders found.");
+            return;
+        }
+
+        // Construct the path to the Extent report HTML
+        File reportFile = new File(latestReportFolder, "Report/CucumberExtentReport.html");
+
+        if (!reportFile.exists()) {
+            System.out.println("Extent report not found at: " + reportFile.getAbsolutePath());
+            return;
+        }
+
+        // Open the report in the default browser
+        try {
+            System.out.println("Opening Extent report: " + reportFile.getAbsolutePath());
+            java.awt.Desktop.getDesktop().browse(reportFile.toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void openCucumberReport() {
+        File reportFile = new File("target/cucumber-report.html");
+
+        if (!reportFile.exists()) {
+            System.out.println("Cucumber report not found at: " + reportFile.getAbsolutePath());
+            return;
+        }
+
+        try {
+            System.out.println("Opening Cucumber report: " + reportFile.getAbsolutePath());
+            Desktop.getDesktop().browse(reportFile.toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static void cleanAllureResults() {
+        File resultsDir = new File("target/allure-results");
+        if (resultsDir.exists() && resultsDir.isDirectory()) {
+            for (File file : Objects.requireNonNull(resultsDir.listFiles())) {
+                file.delete();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+//
+//package utilities;
+//
+//import java.awt.Desktop;
+//import java.io.File;
+//import java.io.IOException;
+//import java.net.URI;
+//import java.util.Objects;
+//
+//public class AllureReportOpener {
+//
+//    public static void openAllureReport() {
+//        try {
+//            // Step 1: Generate the Allure report with --clean
+//            ProcessBuilder generate = new ProcessBuilder(
+//                    "C:\\Users\\2421228\\Downloads\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
+//                    "generate",
+//                    "target/allure-results",
+//                    "--clean",
+//                    "-o",
+//                    "target/allure-report"
+//            );
+//            generate.inheritIO(); // Show output in the console
+//            Process genProcess = generate.start();
+//            int exitCode = genProcess.waitFor();
+//            if (exitCode != 0) {
+//                System.err.println("Allure report generation failed.");
+//                return;
+//            }
+//
+//            // Step 2: Open the generated report's index.html in default browser
+//            File reportIndex = new File("target/allure-report/index.html");
+//            if (!reportIndex.exists()) {
+//                System.err.println("Report index.html not found!");
+//                return;
+//            }
+//
+//            if (Desktop.isDesktopSupported()) {
+//                Desktop.getDesktop().browse(reportIndex.toURI());
+//                System.out.println("Allure report opened in the default browser.");
+//            } else {
+//                System.err.println("Desktop is not supported. Please open the report manually at: " + reportIndex.getAbsolutePath());
+//            }
+//
+//        } catch (IOException | InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    public static void cleanAllureResults() {
+//        File resultsDir = new File("target/allure-results");
+//        if (resultsDir.exists() && resultsDir.isDirectory()) {
+//            for (File file : Objects.requireNonNull(resultsDir.listFiles())) {
+//                file.delete();
+//            }
+//        }
+//    }
+//}
+
+
+//public static void openAllureReport2() {
+//    try {
+//        // Step 1: Generate the Allure report with --clean
+//        ProcessBuilder generate = new ProcessBuilder(
+//                "C:\\Users\\2421185\\Documents\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
+//                "generate",
+//                "target/allure-results",
+//                "--clean",
+//                "-o",
+//                "target/allure-report"
+//        );
+//        generate.inheritIO(); // To show output in the console
+//        Process genProcess = generate.start();
+//        genProcess.waitFor();
+//
+//        // Step 2: Open the generated report
+//        ProcessBuilder open = new ProcessBuilder(
+//                "C:\\Users\\2421185\\Documents\\allure-commandline-2.29.0 2\\allure-2.29.0\\bin\\allure.bat",
+//                "open",
+//                "target/allure-report"
+//        );
+//        open.inheritIO();
+//        Process openProcess = open.start();
+//        openProcess.waitFor();
+//
+//    } catch (IOException | InterruptedException e) {
+//        e.printStackTrace();
+//    }
+//}

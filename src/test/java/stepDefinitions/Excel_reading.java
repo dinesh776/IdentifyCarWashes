@@ -5,7 +5,6 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import junit.framework.Assert;
 import model.Service;
-import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.ResultsPage;
 import pages.ServicePage;
@@ -50,6 +49,7 @@ public class Excel_reading {
     public void save_data(){
         JsonUtility.writeJson(res,data.get("Service Name"));
     }
+
 
     @After("@SaveJson")
     public void save_json(){
