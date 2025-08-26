@@ -3,6 +3,8 @@ package pages;
 
 import base.BasePage;
 import model.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,9 +16,11 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class ResultsPage extends BasePage {
-
+    private static final Logger logger= LogManager.getLogger(ResultsPage.class);
     public ResultsPage(WebDriver driver) {
         super(driver);
+        logger.info("ResultsPage initialized.");
+
     }
 
     @FindBy(id = "abd_name")
@@ -56,48 +60,58 @@ public class ResultsPage extends BasePage {
     WebElement close;
 
     public String getFirstRating(){
+        logger.info("Fetching first rating.");
         return wait.until(ExpectedConditions.visibilityOf(firstRating)).getText();
     }
 
     public void clickOnShow(){
+        logger.info("'Click on Show Number' button");
         callBtn.click();
     }
 
     public String getContact(){
+        logger.info("Retrieving contact info.");
         return contactInfo.getText();
     }
 
     public void closeSendQueryDialog(){
+        logger.info("Closing send query dialog.");
         close.click();
     }
 
     public void setName(String name){
+        logger.info("Setting name: {}", name);
         formName.sendKeys(name);
     }
 
 
     public void setMobileNumber(String number){
+        logger.info("Setting mobileNumber: {}", number);
         formNumber.sendKeys(number);
     }
 
     public void clickOnSendQuery(){
+        logger.info("Clicking on 'Send Enquiry' Button");
         sendQuery.click();
     }
 
     public String getMobileErrorMsg(){
+        logger.info("Fetching Mobile Number error message.");
         return wait.until(ExpectedConditions.visibilityOf(msgMobile)).getText();
     }
 
     public String getNameErrorMsg(){
+        logger.info("Fetching name error message.");
         return wait.until(ExpectedConditions.visibilityOf(msgName)).getText();
     }
 
     public String getWelcomeMsg(){
+        logger.info("Welecome message");
         return wait.until(ExpectedConditions.visibilityOf(welcomeMsg)).getText();
     }
 
     public List<Service> retrieveServices(int numberOfServices,int expectedVotes){
-
+    logger.info("Retrieving services with more than {} votes.", expectedVotes);
         List<Service> result=new ArrayList<>();
 
         for(int i=1;i<=numberOfServices;i++){
@@ -106,6 +120,7 @@ public class ResultsPage extends BasePage {
             try {
                 rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
             }catch (Exception e){
+                logger.warn("Rating not visible at index {}. Scrolling down.", i);
                 jsExecutor.executeScript("window.scrollBy(0, 1000);");
                 rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
             }
@@ -121,6 +136,7 @@ public class ResultsPage extends BasePage {
                         String mobileNumber=callButton.getText();
 
                         if(mobileNumber.startsWith("Show")){
+                            logger.info("Clicking 'Show Number' for service: {}", title);
                             callButton.click();
                             wait.until(ExpectedConditions.not(ExpectedConditions.textMatches(By.xpath("//div[contains(@class,'popbddvn__left')]/div[2]"), Pattern.compile("^Loading.*"))));
 
@@ -129,15 +145,17 @@ public class ResultsPage extends BasePage {
                             closeShow.click();
                         }
                         result.add(new Service(title,mobileNumber));
+                        logger.info("Service added: {} - {}", title, mobileNumber);
                     }
                 }catch (Exception e){
-                    System.out.println(e.getMessage());
+                    logger.error("Error in proceeded in Servicing",e.getMessage());
                 }
 
             }else{
                 i--;
             }
         }
+        logger.info("Total services retrieved: {}", result.size());
         return result;
     }
 }

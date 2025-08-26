@@ -5,13 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
-
+	private  static  final Logger logger= LogManager.getLogger(ExcelUtility.class);
 	private static final List<HashMap<String, String>> testData =new ArrayList<>();
 	private static final String filepath=ConfigReader.getTestDataFile();
 	private static final String sheetName=ConfigReader.getTestDataSheetName();
@@ -19,6 +21,7 @@ public class ExcelUtility {
 
 
 	public static HashMap<String,String> getData(int index){
+		logger.info("Fetching test data at index: {}", index);
 		return testData.get(index);
 	}
 
@@ -26,7 +29,7 @@ public class ExcelUtility {
 		getTestData();
 	}
 	private static void getTestData() {
-
+		logger.info("Reading test data from Excel file: {}, sheet: {}", filepath, sheetName);
 		try {
 			FileInputStream fs = new FileInputStream(filepath);
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
@@ -47,10 +50,12 @@ public class ExcelUtility {
 					}
 				}
 				testData.add(currentHash);
+				logger.debug("Row {} added: {}", i, currentHash);
 			}
+			logger.info("Successfully loaded {} rows of test data.", testData.size());
 			fs.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 	}
 }

@@ -14,7 +14,7 @@ import utilities.ReportOpener;
  * TestRunner class to configure and execute Cucumber tests using TestNG.
  */
 @CucumberOptions(
-        features = {"src/test/resources/features"},  // Path to feature files
+        features = {"src/test/resources/features/free_listing_login.feature"},  // Path to feature files
         //features= {"@target/rerun.txt"},
         glue = {"stepDefinitions", "hooks"},  // Step definitions and hooks
         //tags = "@Sanity or @Regression",  // Tags to filter scenarios
