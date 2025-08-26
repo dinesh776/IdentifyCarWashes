@@ -10,23 +10,32 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+/**
+ * Utility class to handle opening and cleaning test reports.
+ * Supports Allure, Extent, and Cucumber reports.
+ */
 public class ReportOpener {
-    private static final Logger logger = LogManager.getLogger(ReportOpener.class);
+  private static final Logger logger = LogManager.getLogger(ReportOpener.class);
+
+            /**
+            * Generates and opens the Allure report using the configured batch file path.
+            * It first generates the report from results, then opens it in a new terminal window.
+            */
     public static void openAllureReport() {
         try {
             String allurePath = ConfigReader.getAllureBatPath();
             String resultsDir = "target/allure-results";
             String reportDir = "target/allure-report";
 
-            // Step 1: Generate the report
+            // Step 1: Generate the Allure report
             ProcessBuilder generate = new ProcessBuilder(
                     "cmd.exe", "/c", allurePath, "generate", resultsDir, "--clean", "-o", reportDir
             );
-            generate.inheritIO();
+            generate.inheritIO();   // Inherit I/O for visibility
             Process genProcess = generate.start();
-            genProcess.waitFor();
+            genProcess.waitFor();    // Wait for generation to complete
 
-            // Step 2: Open Allure in a new terminal window
+            // Step 2: Open the Allure report in a new terminal window
             String command = String.format("start cmd.exe /k %s open %s", allurePath, reportDir);
             ProcessBuilder open = new ProcessBuilder("cmd.exe", "/c", command);
             open.start();
@@ -39,6 +48,11 @@ public class ReportOpener {
     }
 
 
+
+    /**
+     * Opens the latest Extent report from the "test-output" directory.
+     * It looks for folders starting with "JustDailReport " and opens the most recently modified one.
+     */
     public static void openLatestExtentReport() {
         // Parent directory where timestamped folders are stored
         File parentDir = new File("test-output");
@@ -76,6 +90,7 @@ public class ReportOpener {
         }
     }
 
+    //Opens the Cucumber report located at "target/cucumber-report.html".
     public static void openCucumberReport() {
         File reportFile = new File("target/cucumber-report.html");
 
@@ -93,6 +108,8 @@ public class ReportOpener {
     }
 
 
+
+    //Deletes all files in the "target/allure-results" directory to clean up previous test results.
 
     public static void cleanAllureResults() {
         File resultsDir = new File("target/allure-results");
