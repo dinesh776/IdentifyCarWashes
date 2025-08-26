@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd0a20fc-eebc-49ad-b041-cdeeeec4c439" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Excel_reading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Excel_reading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/AllureReportOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/AllureReportOpener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

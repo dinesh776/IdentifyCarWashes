@@ -18,7 +18,7 @@ public class Show_number_popup {
 
 	@When("all filters are selected accordingly")
 	public void all_filters_are_selected_accordingly() {
-		logger.info("Selecting all filters: Quick Filter = 'top rated'");
+		logger.info("Selecting all filters");
 		sp.clickFilters();
 		sp.setQuickFilter("top rated");
 		sp.applyFilters();
