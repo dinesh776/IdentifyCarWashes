@@ -8,8 +8,6 @@ import junit.framework.Assert;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.HomePage;
-import pages.ServicePage;
-import utilities.ExcelUtility;
 
 public class Search_functionality {
 

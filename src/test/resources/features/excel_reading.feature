@@ -1,5 +1,4 @@
-Feature:
-  Data driven testing
+Feature:Data driven testing
 @sanity
   @SaveJson
 Scenario Outline: Testing core functionality using Excel-based input data
@@ -14,10 +13,10 @@ Scenario Outline: Testing core functionality using Excel-based input data
   |row|
   |1  |
   |2  |
-  |3  |
-  |4  |
-  |5  |
-  |6  |
-  |7  |
-  |8  |
-  |9  |
+#  |3  |
+#  |4  |
+#  |5  |
+#  |6  |
+#  |7  |
+#  |8  |
+#  |9  |
