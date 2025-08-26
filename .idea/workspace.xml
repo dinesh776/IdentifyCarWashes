@@ -7,28 +7,11 @@
     <list default="true" id="dd0a20fc-eebc-49ad-b041-cdeeeec4c439" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/FreeListingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/FreeListingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ServicePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ServicePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ConfigReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ExcelUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ExcelUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/JsonUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/JsonUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ReportOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ReportOpener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ScreenshotUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ScreenshotUtility.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Excel_reading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Excel_reading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/excel_reading.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/excel_reading.feature" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,27 +42,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cucumber Java.Scenario: .executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Successful search from Excel.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Successful search.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Verify that the number of displayed items matches the expected count.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.TestRunner.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/2421159/eclipse-workspace/IdentifyCarWashes&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Scenario: .executor": "Run",
+    "Cucumber Java.Scenario: Successful search from Excel.executor": "Run",
+    "Cucumber Java.Scenario: Successful search.executor": "Run",
+    "Cucumber Java.Scenario: Verify that the number of displayed items matches the expected count.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml.executor": "Run",
+    "TestNG.TestRunner.executor": "Run",
+    "git-widget-placeholder": "pages",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Dinesh/java/Hackathon/IdentifyServices/selenium_grid",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dinesh\java\Hackathon\IdentifyServices\selenium_grid" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dinesh\java\Hackathon\IdentifyServices\selenium_grid" />
       <recent name="C:\Users\2421185\Documents\JustDail\IdentifyCarWashes\src\test\resources" />
     </key>
   </component>
@@ -174,10 +162,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml" />
-        <item itemvalue="Cucumber Java.Scenario: " />
         <item itemvalue="TestNG.TestRunner" />
-        <item itemvalue="Cucumber Java.Scenario: Successful search from Excel" />
-        <item itemvalue="Cucumber Java.Scenario: Successful search" />
       </list>
     </recent_temporary>
   </component>
@@ -191,6 +176,9 @@
       <updated>1755857725462</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="OPEN_GENERIC_TABS">
