@@ -5,6 +5,7 @@ import java.io.ByteArrayInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.logging.Logger;
 
 import io.cucumber.java.*;
 import io.qameta.allure.Allure;

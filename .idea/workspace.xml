@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd0a20fc-eebc-49ad-b041-cdeeeec4c439" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/extent.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/AllureReportOpener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/AllureReportOpener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/ScreenshotUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/ScreenshotUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Extentreport.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hooks/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testcases/HomeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Category_display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Excel_reading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Excel_reading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Filter_functionality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Free_listing_login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Retrieve_items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Search_functionality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Service_page_query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Show_number_popup.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml.executor": "Run",
     "TestNG.TestRunner.executor": "Run",
-    "git-widget-placeholder": "log",
+    "git-widget-placeholder": "tests",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/2421185/Downloads/opencart_cucumber",
     "project.structure.last.edited": "Modules",
