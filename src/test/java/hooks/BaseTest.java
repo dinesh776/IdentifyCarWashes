@@ -5,13 +5,15 @@ import java.io.ByteArrayInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.logging.Logger;
+
 
 import io.cucumber.java.*;
 import io.qameta.allure.Allure;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.LoggerFactory;
 import org.testng.Reporter;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,11 +24,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import utilities.ConfigReader;
 import utilities.ScreenshotUtility;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class BaseTest {
 
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(BaseTest.class);
     public static WebDriver driver=null;
-
+private  static final Logger logger= (Logger) LogManager.getLogger(BaseTest.class);
     public static WebDriver getDriver() {
         return driver;
     } //Getter for webDriver
@@ -88,7 +92,8 @@ public class BaseTest {
                 case "linux":capabilities.setPlatform(Platform.LINUX);break;
                 case "mac":capabilities.setPlatform(Platform.MAC);break;
                 default:
-                    System.out.println("Invalid Platform");return;
+                    logger.info("Invalid Paltform selected");
+                    return;
             }
 
             //set browser capability
@@ -98,7 +103,8 @@ public class BaseTest {
                 case "firefox":capabilities.setBrowserName("firefox");break;
                 case "safari":capabilities.setBrowserName("safari");break;
                 default:
-                    System.out.println("Invalid browser");return;
+                    logger.info("Invalid browser");
+                    return;
             }
 
             //Merge capabilities with options
@@ -117,7 +123,8 @@ public class BaseTest {
                     driver = new EdgeDriver((EdgeOptions) options);
                     break;
                 default:
-                    System.out.println("The Browser is not available in this device");return;
+                    logger.info("The Browser is not available in this device");
+                    return;
             }
         }
 
@@ -159,6 +166,7 @@ public class BaseTest {
     @AfterClass
     public static void tear_down(){
         driver.quit();
+      logger.info("Driver closed Successfully");
     } // close browser and end session
 
 }

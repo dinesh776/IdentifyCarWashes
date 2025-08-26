@@ -14,6 +14,7 @@ import java.util.Properties;
  */
 public class ConfigReader {
 
+
     // Logger for logging messages
     private static final Logger logger = LogManager.getLogger(ConfigReader.class);
 
@@ -35,14 +36,12 @@ public class ConfigReader {
      * Logs success or failure messages.
      */
     private static void loadProperties() {
-        try {
+        try (FileInputStream fileInputStream = new FileInputStream(CONFIG_FILE_PATH)) {
             properties = new Properties();
-            FileInputStream fileInputStream = new FileInputStream(CONFIG_FILE_PATH);
             properties.load(fileInputStream);
-            fileInputStream.close();
-            logger.info("Configuration properties loaded successfully");
+            logger.info("Configuration properties loaded successfully from {}", CONFIG_FILE_PATH);
         } catch (IOException e) {
-            logger.error("Failed to load configuration properties: {}", e.getMessage());
+            logger.error("Failed to load configuration properties from {}: {}", CONFIG_FILE_PATH, e.getMessage(), e);
             throw new RuntimeException("Configuration file not found", e);
         }
     }
@@ -59,6 +58,8 @@ public class ConfigReader {
         String value = properties.getProperty(key);
         if (value == null) {
             logger.warn("Property not found for key: {}", key);
+        } else {
+            logger.debug("Property retrieved - {}: {}", key, value);
         }
         return value;
     }

@@ -1,6 +1,8 @@
 package pages;
 
 import base.BasePage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,9 +13,10 @@ import org.openqa.selenium.support.FindBy;
  * filter and sorting options for services listed on the page.
  */
 public class ServicePage extends BasePage {
-
+    private static final Logger logger= LogManager.getLogger(ServicePage.class);
     public ServicePage(WebDriver driver) {
         super(driver);
+        logger.info("Service Page initialized");
     }
 
     // Main filter button
@@ -72,7 +75,9 @@ public class ServicePage extends BasePage {
 
     //Clicks the main filter button to open the filter menu.
     public void clickFilters(){
+
         filters.click();
+        logger.info("Click On 'Apply Filters' button");
     }
 
 
@@ -83,19 +88,26 @@ public class ServicePage extends BasePage {
 
     public void setQuickFilter(String quickFilter){
         if(quickFilter.equalsIgnoreCase("none")){
+            logger.info("Return Back to Service page");
             return;
         }
         try{
             switch (quickFilter.toLowerCase()){
-                case "top rated":topRated.click();break;
-                case "quick response":quickResponse.click();break;
-                case "jd verified":jdVerified.click();break;
-                case "jd trust":jdTrust.click();break;
+                case "top rated":topRated.click();
+                logger.info("Toprated clicked");
+                break;
+                case "quick response":quickResponse.click();
+                    logger.info("Quick Response clicked");break;
+                case "jd verified":jdVerified.click();
+                    logger.info("jd Verified clicked");
+                break;
+                case "jd trust":jdTrust.click();
+                    logger.info("jd trust clicked");break;
                 default:
-                    System.out.println("Invalid Quick Filter");break;
+                    logger.error("Invalid Quick Filter");break;
             }
         }catch (Exception e){
-            System.out.println(quickFilter + " is not available in filters...");
+            logger.error(quickFilter + " is not available in filters...");
         }
 
     }
@@ -108,6 +120,7 @@ public class ServicePage extends BasePage {
 
     public void sortBy(String sortValue){
         if(sortValue.equalsIgnoreCase("none")){
+            logger.info("Return Back to Service page");
             return;
         }
         try{
@@ -115,22 +128,25 @@ public class ServicePage extends BasePage {
                 case "relevance":
                     if (relevance.isDisplayed()) {
                         relevance.click();
+                        logger.info("relevance clicked");
                     }
                     break;
                 case "rating":
                     if(rating.isDisplayed()){
                         rating.click();
+                        logger.info("Rating clicked");
                     }
                     break;
                 case "popular":
                     if(popular.isDisplayed()){
                         popular.click();
+                        logger.info("popular clicked");
                     }
                     break;
-                default: System.out.println("Invalid sort type");break;
+                default: logger.error("Invalid sort type");break;
             }
         }catch (Exception e){
-            System.out.println(sortValue+" sort type is not available in filters..");
+            logger.error(sortValue+" sort type is not available in filters..");
         }
 
     }
@@ -142,6 +158,7 @@ public class ServicePage extends BasePage {
      */
     public void setRating(String rating){
         if(rating.equalsIgnoreCase("none")){
+            logger.info("Return back to Service page");
             return;
         }
         try {
@@ -149,35 +166,47 @@ public class ServicePage extends BasePage {
                 case "any":
                     if(rating1.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating1);
-                    }break;
+                    }
+                    logger.info("'any' is selected in the rating");
+                    break;
                 case "3.5+":
                     if(rating2.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating2);
-                    }break;
+                    }
+                    logger.info("'3.5' is selected in the rating");
+                    break;
                 case "4.0+":
                     if(rating3.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating3);
-                    }break;
+                    }
+                    logger.info("'4.0' is selected in the rating");
+                    break;
                 case "4.5+":
                     if(rating4.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating4);
-                    }break;
+                    }
+                    logger.info("'4.5' is selected in the rating");
+                    break;
                 case "5":
                     if(rating5.isDisplayed()){
                         jsExecutor.executeScript("arguments[0].click();",rating5);
-                    }break;
+                    }
+                    logger.info("'5.0' is selected in the rating");
+                    break;
                 default:
-                    System.out.println("Invalid rating");break;
+                    logger.info("Invalid rating");break;
             }
         }catch (Exception e){
-            System.out.println(rating+" rating is not available in filters ...");
+            logger.error(rating+" rating is not available in filters ...");
         }
     }
 
     //Clicks the "Apply Filters" button to apply selected filters.
 
     public void applyFilters(){
+
         applyFilters.click();
+        logger.info("'apply filter' button is clicked");
     }
 
 

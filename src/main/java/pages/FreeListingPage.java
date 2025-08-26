@@ -5,6 +5,8 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import base.BasePage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,8 +20,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class FreeListingPage extends BasePage {
 
 	// Constructor initializes elements using PageFactory
+private static final Logger logger=LogManager.getLogger(FreeListingPage.class);
+
 	public FreeListingPage(WebDriver driver) {
 		super(driver);
+		logger.info("Freelisting Page initialized.");
 	}
 
 
@@ -57,8 +62,10 @@ public class FreeListingPage extends BasePage {
 	//Handles and dismisses any popup that appears on the page.
 	public void handlingPopUp()
 	{
+
 		wait.until(ExpectedConditions.visibilityOf(dismiss));
 		dismiss.click();
+		logger.info("PopUp Handled");
 	}
 
 
@@ -69,8 +76,10 @@ public class FreeListingPage extends BasePage {
 
 	public void freeListingPage() {
 		try{
+			logger.info("Opened Freelisting Page Succesfully" );
 			freeListing.click();
 		}catch (StaleElementReferenceException e){
+			logger.error("Opened Freelisting Page Succesfully" );
 			freeListing.click();// Retry clicking if element becomes stale
 		}
 
@@ -84,7 +93,9 @@ public class FreeListingPage extends BasePage {
 
 	public void mobileNumber(String number)
 	{
+
 		mobile.sendKeys(number);
+		logger.info("Phone Number entered Succesfully");
 	}
 
 
@@ -94,6 +105,7 @@ public class FreeListingPage extends BasePage {
 	public void startNow()
 	{
 		start.click();
+		logger.info("'Start Now' button Clicked");
 	}
 
 
@@ -102,6 +114,7 @@ public class FreeListingPage extends BasePage {
 	 * @return Error message text
 	 */
 	public String errorDisplay() {
+		logger.info("Error message is displayed in the Console");
 		return errorMsg.getText();
 	}
 
@@ -117,7 +130,9 @@ public class FreeListingPage extends BasePage {
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div/div[1]/div[9]/div/div[1]/div"))
 		));
 		String text = element.getText();
-		close.click();  // Close the popup after retrieving text
+
+		close.click();// Close the popup after retrieving text
+		logger.info("OTP Verificvation Popup is handled");
 		return text;
 
 	}

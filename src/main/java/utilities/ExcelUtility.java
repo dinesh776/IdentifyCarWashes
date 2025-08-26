@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -18,8 +20,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
 
-
-	// List to store all test data rows as HashMaps
+  private  static  final Logger logger= LogManager.getLogger(ExcelUtility.class);
+  // List to store all test data rows as HashMaps
 	private static final List<HashMap<String, String>> testData =new ArrayList<>();
 
 	// File path and sheet name are read from the config file
@@ -36,6 +38,7 @@ public class ExcelUtility {
 	 */
 
 	public static HashMap<String,String> getData(int index){
+		logger.info("Fetching test data at index: {}", index);
 		return testData.get(index);
 	}
 
@@ -51,7 +54,7 @@ public class ExcelUtility {
 	 */
 
 	private static void getTestData() {
-
+		logger.info("Reading test data from Excel file: {}, sheet: {}", filepath, sheetName);
 		try {
 			//Open the Excel file
 			FileInputStream fs = new FileInputStream(filepath);
@@ -82,10 +85,14 @@ public class ExcelUtility {
 
 				// Add the row data to the testData list
 				testData.add(currentHash);
+				logger.debug("Row {} added: {}", i, currentHash);
 			}
-			fs.close();    // Close the file stream
+
+			logger.info("Successfully loaded {} rows of test data.", testData.size());
+			fs.close();// Close the file stream
+
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getMessage());
 		}
 	}
 }

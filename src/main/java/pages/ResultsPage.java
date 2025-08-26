@@ -3,6 +3,8 @@ package pages;
 
 import base.BasePage;
 import model.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +20,11 @@ import java.util.regex.Pattern;
  * and retrieve service-related data based on ratings and votes.
  */
 public class ResultsPage extends BasePage {
-
+    private static final Logger logger= LogManager.getLogger(ResultsPage.class);
     public ResultsPage(WebDriver driver) {
         super(driver);
+        logger.info("ResultsPage initialized.");
+
     }
 
     // Form input fields and buttons
@@ -70,50 +74,61 @@ public class ResultsPage extends BasePage {
 
     // Returns the first rating text
     public String getFirstRating(){
+        logger.info("Fetching first rating.");
         return wait.until(ExpectedConditions.visibilityOf(firstRating)).getText();
     }
 
     // Clicks on the "Show Number" button
     public void clickOnShow(){
+        logger.info("'Click on Show Number' button");
         callBtn.click();
     }
 
     // Retrieves contact information after showing the number
     public String getContact(){
+        logger.info("Retrieving contact info.");
         return contactInfo.getText();
     }
 
     // Closes the send query dialog
     public void closeSendQueryDialog(){
+        logger.info("Closing send query dialog.");
         close.click();
     }
 
     public void setName(String name){
+        logger.info("Setting name: {}", name);
         formName.sendKeys(name);
     }
 
 
     public void setMobileNumber(String number){
+        logger.info("Setting mobileNumber: {}", number);
         formNumber.sendKeys(number);
     }
 
     // Clicks the send query button
     public void clickOnSendQuery(){
+        logger.info("Clicking on 'Send Enquiry' Button");
         sendQuery.click();
     }
 
     public String getMobileErrorMsg(){
+        logger.info("Fetching Mobile Number error message.");
         return wait.until(ExpectedConditions.visibilityOf(msgMobile)).getText();
     }
 
     public String getNameErrorMsg(){
+        logger.info("Fetching name error message.");
         return wait.until(ExpectedConditions.visibilityOf(msgName)).getText();
     }
 
     // Retrieves the welcome message after login
     public String getWelcomeMsg(){
+        logger.info("Welecome message");
         return wait.until(ExpectedConditions.visibilityOf(welcomeMsg)).getText();
     }
+
 
 
 /**
@@ -126,8 +141,8 @@ public class ResultsPage extends BasePage {
  * @return List of Service objects with title and mobile number
  */
 
- public List<Service> retrieveServices(int numberOfServices,int expectedVotes){
-
+  public List<Service> retrieveServices(int numberOfServices,int expectedVotes){
+      logger.info("Retrieving services with more than {} votes.", expectedVotes);
         List<Service> result=new ArrayList<>();
 
         for(int i=1;i<=numberOfServices;i++){
@@ -138,6 +153,7 @@ public class ResultsPage extends BasePage {
                 rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
             }catch (Exception e){
                 // Scroll down and retry if not visible
+                logger.warn("Rating not visible at index {}. Scrolling down.", i);
                 jsExecutor.executeScript("window.scrollBy(0, 1000);");
                 rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
             }
@@ -157,6 +173,7 @@ public class ResultsPage extends BasePage {
                         String mobileNumber=callButton.getText();
 
                         if(mobileNumber.startsWith("Show")){
+                            logger.info("Clicking 'Show Number' for service: {}", title);
                             callButton.click();
                             // Wait until contact info is loaded
                             wait.until(ExpectedConditions.not(ExpectedConditions.textMatches(By.xpath("//div[contains(@class,'popbddvn__left')]/div[2]"), Pattern.compile("^Loading.*"))));
@@ -167,9 +184,10 @@ public class ResultsPage extends BasePage {
                         }
                         // Add service to result list
                         result.add(new Service(title,mobileNumber));
+                        logger.info("Service added: {} - {}", title, mobileNumber);
                     }
                 }catch (Exception e){
-                    System.out.println(e.getMessage());
+                    logger.error("Error in proceeded in Servicing",e.getMessage());
                 }
 
             }else{
@@ -177,6 +195,7 @@ public class ResultsPage extends BasePage {
                 i--;
             }
         }
+        logger.info("Total services retrieved: {}", result.size());
         return result;
     }
 }
