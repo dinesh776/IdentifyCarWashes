@@ -19,4 +19,3 @@ Scenario Outline: Testing core functionality using Excel-based input data
 #  |6  |
 #  |7  |
 #  |8  |
-#  |9  |
