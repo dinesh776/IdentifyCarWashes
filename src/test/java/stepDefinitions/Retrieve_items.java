@@ -2,10 +2,8 @@ package stepDefinitions;
 
 import hooks.BaseTest;
 import io.cucumber.java.en.*;
-import junit.framework.Assert;
 import model.Service;
 import pages.ResultsPage;
-import pages.ServicePage;
 
 import java.util.List;
 

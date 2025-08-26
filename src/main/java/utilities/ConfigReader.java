@@ -62,13 +62,6 @@ public class ConfigReader {
         return getProperty("test.data.sheet.name");
     }
 
-    public static String getExtentReportPath() {
-        return getProperty("extent.report.path");
-    }
-
-    public static String getScreenshotPath() {
-        return getProperty("screenshot.path");
-    }
 
     public static String getEnvironment(){
         return getProperty("environment");
@@ -83,4 +76,7 @@ public class ConfigReader {
     public static String getJsonFilePath(){
         return getProperty("json.file.path");
     }
+
+    public static String getAllureBatPath(){return getProperty("allure.bat.path");}
+
 }

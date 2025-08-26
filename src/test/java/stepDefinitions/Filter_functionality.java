@@ -1,18 +1,15 @@
 package stepDefinitions;
 
 import hooks.BaseTest;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Do;
 import junit.framework.Assert;
-import pages.HomePage;
 import pages.ResultsPage;
 import pages.ServicePage;
 
 public class Filter_functionality {
-	private ServicePage sp = new ServicePage(BaseTest.getDriver());
-	private ResultsPage rp = new ResultsPage(BaseTest.getDriver());
+	private final ServicePage sp = new ServicePage(BaseTest.getDriver());
+	private final ResultsPage rp = new ResultsPage(BaseTest.getDriver());
 	
 	@When("the user selects {string} rating in filters")
 	public void the_user_selects_a_rating_filter(String rating) {

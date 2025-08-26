@@ -106,7 +106,7 @@ public class ResultsPage extends BasePage {
             try {
                 rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
             }catch (Exception e){
-                jsExecutor.executeScript("window.scrollBy(0, 500);");
+                jsExecutor.executeScript("window.scrollBy(0, 1000);");
                 rating=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
             }
             String actualVotes=rating.getText().split(" ")[0];
@@ -134,6 +134,8 @@ public class ResultsPage extends BasePage {
                     System.out.println(e.getMessage());
                 }
 
+            }else{
+                i--;
             }
         }
         return result;
