@@ -5,8 +5,7 @@ import io.cucumber.java.en.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
-import io.cucumber.java.en.*;
-import junit.framework.Assert;
+
 import pages.ResultsPage;
 import pages.ServicePage;
 
