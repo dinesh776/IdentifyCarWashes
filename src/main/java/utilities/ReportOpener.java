@@ -6,29 +6,41 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+
+/**
+ * Utility class to handle opening and cleaning test reports.
+ * Supports Allure, Extent, and Cucumber reports.
+ */
 public class ReportOpener {
+  private static final Logger logger = LogManager.getLogger(ReportOpener.class);
 
+            /**
+            * Generates and opens the Allure report using the configured batch file path.
+            * It first generates the report from results, then opens it in a new terminal window.
+            */
     public static void openAllureReport() {
         try {
             String allurePath = ConfigReader.getAllureBatPath();
             String resultsDir = "target/allure-results";
             String reportDir = "target/allure-report";
 
-            // Step 1: Generate the report
+            // Step 1: Generate the Allure report
             ProcessBuilder generate = new ProcessBuilder(
                     "cmd.exe", "/c", allurePath, "generate", resultsDir, "--clean", "-o", reportDir
             );
-            generate.inheritIO();
+            generate.inheritIO();   // Inherit I/O for visibility
             Process genProcess = generate.start();
-            genProcess.waitFor();
+            genProcess.waitFor();    // Wait for generation to complete
 
-            // Step 2: Open Allure in a new terminal window
+            // Step 2: Open the Allure report in a new terminal window
             String command = String.format("start cmd.exe /k %s open %s", allurePath, reportDir);
             ProcessBuilder open = new ProcessBuilder("cmd.exe", "/c", command);
             open.start();
 
-            System.out.println("Allure report server started in a separate terminal.");
+            logger.info("Allure report server started in a separate terminal.");
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -36,12 +48,17 @@ public class ReportOpener {
     }
 
 
+
+    /**
+     * Opens the latest Extent report from the "test-output" directory.
+     * It looks for folders starting with "JustDailReport " and opens the most recently modified one.
+     */
     public static void openLatestExtentReport() {
         // Parent directory where timestamped folders are stored
         File parentDir = new File("test-output");
 
         if (!parentDir.exists() || !parentDir.isDirectory()) {
-            System.out.println("Parent directory not found: " + parentDir.getAbsolutePath());
+            logger.error("Parent directory not found: " + parentDir.getAbsolutePath());
             return;
         }
 
@@ -52,7 +69,7 @@ public class ReportOpener {
                 .orElse(null);
 
         if (latestReportFolder == null) {
-            System.out.println("No timestamped report folders found.");
+            logger.info("No timestamped report folders found.");
             return;
         }
 
@@ -60,7 +77,7 @@ public class ReportOpener {
         File reportFile = new File(latestReportFolder, "Report/CucumberExtentReport.html");
 
         if (!reportFile.exists()) {
-            System.out.println("Extent report not found at: " + reportFile.getAbsolutePath());
+            logger.error("Extent report not found at: " + reportFile.getAbsolutePath());
             return;
         }
 
@@ -73,16 +90,17 @@ public class ReportOpener {
         }
     }
 
+    //Opens the Cucumber report located at "target/cucumber-report.html".
     public static void openCucumberReport() {
         File reportFile = new File("target/cucumber-report.html");
 
         if (!reportFile.exists()) {
-            System.out.println("Cucumber report not found at: " + reportFile.getAbsolutePath());
+            logger.error("Cucumber report not found at: " + reportFile.getAbsolutePath());
             return;
         }
 
         try {
-            System.out.println("Opening Cucumber report: " + reportFile.getAbsolutePath());
+            logger.info("Opening Cucumber report: " + reportFile.getAbsolutePath());
             Desktop.getDesktop().browse(reportFile.toURI());
         } catch (IOException e) {
             e.printStackTrace();
@@ -91,6 +109,8 @@ public class ReportOpener {
 
 
 
+    //Deletes all files in the "target/allure-results" directory to clean up previous test results.
+
     public static void cleanAllureResults() {
         File resultsDir = new File("target/allure-results");
         if (resultsDir.exists() && resultsDir.isDirectory()) {
@@ -98,6 +118,7 @@ public class ReportOpener {
                 file.delete();
             }
         }
+        logger.info("Allure Result was cleared");
     }
 }
 

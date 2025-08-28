@@ -14,7 +14,9 @@ import utilities.ReportOpener;
  * TestRunner class to configure and execute Cucumber tests using TestNG.
  */
 @CucumberOptions(
-        features = {"src/test/resources/features/excel_reading.feature"},  // Path to feature files
+
+        features = {"src/test/resources/features/category_display.feature"},  // Path to feature files
+
         //features= {"@target/rerun.txt"},
         glue = {"stepDefinitions", "hooks"},  // Step definitions and hooks
         //tags = "@Sanity or @Regression",  // Tags to filter scenarios
@@ -25,28 +27,36 @@ import utilities.ReportOpener;
                 "rerun:target/rerun.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"// HTML report generation
         },
-        monochrome = true,
-        dryRun = false,
-        publish = false
+        monochrome = true,  //Removes unnecessary characters from console output
+        dryRun = false,     // If true, checks for missing step definitions without executing tests
+        publish = false     // If true, publishes results to Cucumber Report (optional)
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
+
+    // Executed once before the entire test suite starts
     @BeforeSuite
     public void beforeSuite() {
         // Clean previous Allure results before test execution
         ReportOpener.cleanAllureResults();
     }
+
+    // Executed once after the entire test suite finishes
     @AfterSuite
     public void afterSuite() {
 
+
+        // Opens Allure, Extent, and Cucumber reports automatically after test execution
         ReportOpener.openAllureReport();
         ReportOpener.openLatestExtentReport();
         ReportOpener.openCucumberReport();
     }
 
+
+    // Provides scenarios to TestNG for parallel execution or data-driven testing
     @Override
     @DataProvider()
     public Object[][] scenarios(){
         return super.scenarios();
-    }
+    } // Uses default scenario provider from AbstractTestNGCucumberTests
 }
