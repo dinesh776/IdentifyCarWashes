@@ -1,6 +1,7 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,8 +45,11 @@ public class HomePage extends BasePage {
 
 
     // WebElement for selecting a custom location from suggestions
+    @FindBy(xpath = "//div[starts-with(text(),'Trending')]/ancestor::li/following::li[1]")
+    WebElement customLocation1;
+
     @FindBy(id = "react-autowhatever-city-auto-suggest--item-1")
-    WebElement customLocation;
+    WebElement customLocation2;
 
 
     // WebElement for popular categories section
@@ -93,7 +97,6 @@ public class HomePage extends BasePage {
      * Clicks on the popular categories section.
      */
     public void clickOnCategories(){
-
         popularCategories.click();
         logger.info("'Categories' button clicked");
     }
@@ -136,7 +139,6 @@ public class HomePage extends BasePage {
 
 // closes the categories popup
     public void closeCategories(){
-
         popClose.click();
         logger.info("Pop up handled");
     }
@@ -150,8 +152,20 @@ public class HomePage extends BasePage {
     public void handleLocation(String locationVal){
         if(!locationVal.equalsIgnoreCase("near me")){
             wait.until(ExpectedConditions.elementToBeClickable(location)).click();
-            wait.until(ExpectedConditions.visibilityOf(location)).sendKeys(locationVal);
-            wait.until(ExpectedConditions.elementToBeClickable(customLocation)).click();
+            location.sendKeys(locationVal);
+            try {
+                if(customLocation1.isDisplayed()){
+                    customLocation1.click();
+                }else{
+                    customLocation2.click();
+                }
+            }catch (StaleElementReferenceException e){
+                if(customLocation1.isDisplayed()){
+                    customLocation1.click();
+                }else{
+                    customLocation2.click();
+                }
+            }
         }
         logger.info("location Handled");
     }
@@ -162,7 +176,6 @@ public class HomePage extends BasePage {
      * @param service Service name to be searched
      */
     public void setSearchField(String service){
-
         searchField.sendKeys(service);
         logger.info("Searching for the Service");
     }
@@ -178,7 +191,6 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnSearch(){
-
         searchButton.click();
         logger.info("Click on search Button");
     }
