@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Retrospective Document – IdentifyCarWashes</title>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #000; }
+  h1 { font-size: 20pt; margin: 0 0 8pt 0; text-align:center; }
+  h2 { font-size: 16pt; margin: 18pt 0 6pt 0; }
+  h3 { font-size: 13pt; margin: 14pt 0 6pt 0; }
+  p { margin: 6pt 0; }
+  ul { margin: 6pt 0 6pt 18pt; }
+  table { border-collapse: collapse; width: 100%; margin: 8pt 0 14pt 0; }
+  th, td { border: 1px solid #000; padding: 6pt; vertical-align: top; }
+  th { background: #f0f0f0; }
+  .no-border th, .no-border td { border: none; }
+  .center { text-align: center; }
+</style>
+</head>
+<body>
+  <h1>HACKATHON PROJECT</h1>
+  <h2 class="center">IdentifyCarWashes</h2>
+
+  <h2 class="center">RETROSPECTIVE DOCUMENT</h2>
+
+  <h3>Prepared By / Reviewed By / Approved By</h3>
+  <table class="no-border">
+    <tr>
+      <th></th>
+      <th>Prepared By</th>
+      <th>Reviewed By</th>
+      <th>Approved By</th>
+    </tr>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td>BUG BUSTERS</td>
+      <td>P. Devathilagai</td>
+      <td>Product Owner</td>
+    </tr>
+    <tr>
+      <td><strong>Role</strong></td>
+      <td>Programmer Analyst Trainee</td>
+      <td>Batch Trainer</td>
+      <td>PO</td>
+    </tr>
+  </table>
+
+  <h2>What Went Well in the Hackathon?</h2>
+  <p>As entry-level trainees, being given a model project through the Hackathon was motivating and practical. It provided a structured opportunity to apply our learning in a goal-oriented environment focused on a real-world scenario—discovering and validating local car wash services.</p>
+  <p>We closely followed the Hackathon guidelines and aligned weekly deliverables with the suggested format, enabling timely submission of our project milestones and the overall solution.</p>
+  <p>We successfully implemented a Hybrid Automation Framework meeting the given requirements. This included integrating multiple testing strategies and tools—Selenium WebDriver, TestNG/Cucumber BDD, Apache POI, and reporting—enhancing the robustness and maintainability of our solution.</p>
+  <p>Before the Hackathon, our exposure to Hybrid frameworks—particularly Page Factory within Page Object Model (POM)—was limited. The Hackathon enabled us to apply these concepts effectively in a production-like context.</p>
+  <p>Previously, we worked primarily with a Data-Driven Framework. The Hackathon challenged us to go beyond and implement a more advanced Hybrid Framework, broadening our understanding of automation architecture and design patterns.</p>
+  <p>We expanded our capabilities by implementing Behavior-Driven Development (BDD) using Cucumber and executing on Selenium Grid for parallel, cross-browser validation (Chrome and Edge). This improved execution speed and confidence in cross-environment stability.</p>
+
+  <h2>What Can Be Improved in the Hackathon?</h2>
+  <ul>
+    <li><strong>Subject Matter Expert (SME) Involvement</strong>: Regular check-ins or reviews by SMEs based on weekly deliverables would ensure teams progress in the right direction and adhere to best practices.</li>
+    <li><strong>Access to Internal Frameworks</strong>: Having access to enterprise-grade internal automation frameworks for practice would be highly beneficial, better preparing trainees for real-world scenarios and deployments.</li>
+    <li><strong>Test Data Provisioning</strong>: Earlier availability of stable test data sets and mock endpoints would reduce rework due to changing data during sprints.</li>
+    <li><strong>CI/CD Integration</strong>: Providing base Jenkins/GitHub Actions templates for running UI tests on schedule and on pull requests would accelerate adoption of continuous testing.</li>
+    <li><strong>Environment Stability</strong>: A dedicated, stable test environment with seeded data would minimize flakiness caused by live content changes.</li>
+  </ul>
+
+  <h2>Key Outcomes</h2>
+  <ul>
+    <li>End-to-end BDD scenarios automated for search, filters, service page inquiry, show-number popup, free listing login, and data retrieval.</li>
+    <li>Reusable Page Objects and utilities for configuration, screenshots, JSON/Excel handling.</li>
+    <li>Cross-browser runs completed with consistent results.</li>
+    <li>Actionable reports generated via Allure/Extent.</li>
+  </ul>
+
+  <h2>Next Steps</h2>
+  <ul>
+    <li>Harden test stability with smarter waits and retry logic on flaky elements.</li>
+    <li>Add visual validation and accessibility checks for key flows.</li>
+    <li>Integrate with CI for nightly and PR-based regression runs.</li>
+    <li>Expand data-driven coverage via additional Excel scenarios.</li>
+  </ul>
+</body>
+</html> 
