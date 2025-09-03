@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dd0a20fc-eebc-49ad-b041-cdeeeec4c439" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documents/Test Plan- Car Wash service.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testRunner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testdata/test_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testdata/test_data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dinesh776&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dinesh776/IdentifyCarWashes.git&quot;,
+    &quot;accountId&quot;: &quot;c5aa58e3-77c1-4e52-a33f-7953132c6eb3&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -39,32 +52,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.Scenario: .executor": "Run",
-    "Cucumber Java.Scenario: Successful search from Excel.executor": "Run",
-    "Cucumber Java.Scenario: Successful search.executor": "Run",
-    "Cucumber Java.Scenario: Verify that the number of displayed items matches the expected count.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml.executor": "Run",
-    "TestNG.TestRunner.executor": "Run",
-    "git-widget-placeholder": "pages",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Dinesh/java/Hackathon/IdentifyServices/selenium_grid",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Scenario: .executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Successful search from Excel.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Successful search.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Verify that the number of displayed items matches the expected count.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestRunner.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pages&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Dinesh/java/Hackathon/IdentifyServices/Documents&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dinesh\java\Hackathon\IdentifyServices\Documents" />
+      <recent name="C:\Dinesh\java\Hackathon\IdentifyServices\src\test\resources\f" />
       <recent name="C:\Dinesh\java\Hackathon\IdentifyServices\selenium_grid" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Dinesh\java\Hackathon\IdentifyServices\selenium_grid" />
       <recent name="C:\Users\2421185\Documents\JustDail\IdentifyCarWashes\src\test\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="testRunner" />
     </key>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/2421185/Documents/JustDail/IdentifyCarWashes/testng.xml">
