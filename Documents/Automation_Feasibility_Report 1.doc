@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Automation Feasibility Report - IdentifyCarWashes</title>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #000; }
+  h1 { font-size: 20pt; margin: 0 0 6pt 0; }
+  h2 { font-size: 16pt; margin: 18pt 0 6pt 0; }
+  h3 { font-size: 13pt; margin: 14pt 0 6pt 0; }
+  p { margin: 6pt 0; }
+  ul { margin: 6pt 0 6pt 18pt; }
+  table { border-collapse: collapse; width: 100%; margin: 8pt 0 14pt 0; }
+  th, td { border: 1px solid #000; padding: 6pt; vertical-align: top; }
+  th { background: #f0f0f0; }
+  .meta-table td { width: 33%; }
+</style>
+</head>
+<body>
+  <h1>AUTOMATION FEASIBILITY REPORT</h1>
+  <h2>IdentifyCarWashes</h2>
+
+  <h3>Prepared By</h3>
+  <table class="meta-table">
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+    <tr>
+      <td>IdentifyCarWashes Automation Team</td>
+      <td>SDET / QA Automation</td>
+    </tr>
+  </table>
+
+  <h3>Reviewed By</h3>
+  <table class="meta-table">
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+    <tr>
+      <td>Project QA Lead</td>
+      <td>QA Lead</td>
+    </tr>
+  </table>
+
+  <h3>Approved By</h3>
+  <table class="meta-table">
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+    <tr>
+      <td>Product Owner</td>
+      <td>PO</td>
+    </tr>
+  </table>
+
+  <h2>Automation Feasibility</h2>
+  <p>Automation Feasibility in automation testing refers to a checklist that helps determine whether manual test cases are suitable for automation.</p>
+
+  <h3>Automation Feasibility Checklist (AFC)</h3>
+  <p><strong>Essential Criteria</strong></p>
+  <ul>
+    <li>Dependencies / Pre-requisites: Selenium, Java, TestNG/Cucumber, WebDrivers, Allure/Extent, Excel data — YES</li>
+    <li>Detailed Test Steps: BDD feature files present — YES</li>
+    <li>Test Data Availability: <code>testdata/test_data.xlsx</code> — YES</li>
+    <li>Expected Results: Defined in Gherkin steps — YES</li>
+    <li>Traceability: Features map to requirements below — YES</li>
+  </ul>
+  <p><strong>Optional Criteria</strong></p>
+  <ul>
+    <li>Subject Matter Expert (SME) Support — YES</li>
+    <li>Duplication of Test Steps — Low; reusable page objects/utilities — YES</li>
+    <li>Availability of Multiple Sets of Data — Excel-driven — YES</li>
+    <li>Snapshot of AFC — Included in this document — YES</li>
+  </ul>
+
+  <h3>Benefits of Automation Feasibility Checklist</h3>
+  <ul>
+    <li>Reduces manual execution effort</li>
+    <li>Improves automation efficiency</li>
+    <li>Helps derive effective manual test cases</li>
+    <li>Controls and avoids risks in automation</li>
+  </ul>
+
+  <h2>Readiness Check</h2>
+  <table>
+    <tr>
+      <th>READINESS CHECK</th>
+      <th>YES/NO</th>
+    </tr>
+    <tr>
+      <td>Product Stable?</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Any Planned Enhancement in the Near Future?</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <td>Won’t Any Bug Fixes Impact Major Functionalities?</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <td>Are the Test Conditions and Preconditions Detailed?</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Test Case and Test Data Analysis Done?</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h2>Automation Feasibility by Requirement</h2>
+
+  <h3>Requirement 1: Search Functionality (<code>search_functionality.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Enter location/category and initiate search</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Validate results page load and title</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Verify top N results contain expected keywords</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 2: Filter Functionality (<code>filter_functionality.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Apply rating/open-now/distance filters</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Validate filtered results comply with selected filters</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Clear filters and verify full result set restored</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 3: Category Display (<code>category_display.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Verify car wash categories visible on home page</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Navigate via category tile and validate listing page</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 4: Service Page Query (<code>service_page_query.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Open a provider’s service page from results</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Submit valid inquiry and verify success acknowledgement</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Submit invalid data and validate error handling</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 5: Show Number Popup (<code>show_number_popup.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Click “Show Number” and validate popup visibility</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Verify number masking/unmasking and format</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 6: Free Listing Login (<code>free_listing_login.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Navigate to Free Listing and open login/register</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Login/register with valid credentials from Excel</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Validate error message for existing user/invalid credentials</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 7: Retrieve Items From Results (<code>retrieve_items.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Extract names/ratings/addresses of first N listings</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Persist details to report/console/Excel</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h3>Requirement 8: Data-Driven Execution (<code>excel_reading.feature</code>)</h3>
+  <table>
+    <tr>
+      <th>FUNCTIONALITY NAME</th>
+      <th>TEST CASE COUNT</th>
+      <th>TEST ENVIRONMENT AVAILABLE</th>
+      <th>POSSIBILITY FOR AUTOMATION</th>
+    </tr>
+    <tr>
+      <td>Read multiple search inputs from Excel</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Execute search and validate per row of data</td>
+      <td>1</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+  </table>
+
+  <h2>Automation vs Manual Testing</h2>
+  <table>
+    <tr>
+      <th>TEST PREFERENCES</th>
+      <th>TO AUTOMATE</th>
+      <th>NOT TO AUTOMATE</th>
+    </tr>
+    <tr>
+      <td>Are the requirements stable?</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Are detailed test cases with predictable results available?</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Tedious and repetitive tasks</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Non-repetitive or ad-hoc tasks</td>
+      <td>NO</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <td>High regression rate and changing</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <td>Low regression rate and constant</td>
+      <td>NO</td>
+      <td>NO</td>
+    </tr>
+  </table>
+
+  <p><em>Notes:</em> Test environment: Selenium + Java + TestNG/Cucumber; Allure/Extent reporting configured; Excel-driven data available. Page Object Model present (<code>src/main/java/pages/*</code>), utilities available (<code>JsonUtility</code>, <code>ExcelUtility</code>, <code>ScreenshotUtility</code>) enabling robust automation. All listed scenarios are UI-driven and repeatable, thus strong candidates for automation.</p>
+</body>
+</html> 

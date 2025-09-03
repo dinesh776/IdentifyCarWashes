@@ -1,5 +1,7 @@
 ## IdentifyServices — Selenium + Cucumber + TestNG Automation Framework
 
+**GitHub Repository:** [https://github.com/dinesh776/IdentifyCarWashes.git](https://github.com/dinesh776/IdentifyCarWashes.git)
+
 A Java automation framework that validates core user journeys on Justdial and extracts service details. It supports local and Selenium Grid execution, BDD-style test definitions with Cucumber, TestNG orchestration with retries, data-driven testing via Excel, JSON exports, and rich reporting with Allure, ExtentReports, and Cucumber HTML.
 
 ### Tech stack

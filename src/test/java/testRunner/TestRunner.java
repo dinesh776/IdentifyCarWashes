@@ -15,11 +15,11 @@ import utilities.ReportOpener;
  */
 @CucumberOptions(
 
-        features = {"src/test/resources/features/category_display.feature"},  // Path to feature files
+        features = {"src/test/resources/features"},  // Path to feature files
 
         //features= {"@target/rerun.txt"},
         glue = {"stepDefinitions", "hooks"},  // Step definitions and hooks
-        //tags = "@Sanity or @Regression",  // Tags to filter scenarios
+//        tags = "@regression",  // Tags to filter scenarios
         plugin = {
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm", // Allure report plugin
                 "pretty",  // Console output formatting
